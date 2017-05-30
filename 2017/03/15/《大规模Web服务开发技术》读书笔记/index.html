@@ -1,0 +1,871 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="大规模Web服务开发技术," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="开始从事WEB后端方面开发了，准备从《大规模Web服务开发技术》获取一些知识。    大数据处理  简单来说，当一台服务器无法承担负载时，都会采用横向扩展（scale out）或者纵向扩展（scale up）。横向扩展就是通过服务器的数量来分担负载，纵向扩展是通过提高硬件的性能来处理负载。    难点内存有限，磁盘补位。一般磁盘瓶颈在于寻道与SSD瓶颈在于总线速度与其他一些架构。 寻找瓶颈的流程">
+<meta name="keywords" content="大规模Web服务开发技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《大规模Web服务开发技术》读书笔记">
+<meta property="og:url" content="http://yoursite.com/2017/03/15/《大规模Web服务开发技术》读书笔记/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="开始从事WEB后端方面开发了，准备从《大规模Web服务开发技术》获取一些知识。    大数据处理  简单来说，当一台服务器无法承担负载时，都会采用横向扩展（scale out）或者纵向扩展（scale up）。横向扩展就是通过服务器的数量来分担负载，纵向扩展是通过提高硬件的性能来处理负载。    难点内存有限，磁盘补位。一般磁盘瓶颈在于寻道与SSD瓶颈在于总线速度与其他一些架构。 寻找瓶颈的流程">
+<meta property="og:updated_time" content="2017-05-23T05:17:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《大规模Web服务开发技术》读书笔记">
+<meta name="twitter:description" content="开始从事WEB后端方面开发了，准备从《大规模Web服务开发技术》获取一些知识。    大数据处理  简单来说，当一台服务器无法承担负载时，都会采用横向扩展（scale out）或者纵向扩展（scale up）。横向扩展就是通过服务器的数量来分担负载，纵向扩展是通过提高硬件的性能来处理负载。    难点内存有限，磁盘补位。一般磁盘瓶颈在于寻道与SSD瓶颈在于总线速度与其他一些架构。 寻找瓶颈的流程">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/15/《大规模Web服务开发技术》读书笔记/"/>
+
+
+
+
+
+  <title>《大规模Web服务开发技术》读书笔记 | Hexo</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/《大规模Web服务开发技术》读书笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="big_pineapple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oma8ea83e.bkt.clouddn.com/icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《大规模Web服务开发技术》读书笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T13:15:49+08:00">
+                2017-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">读书笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>开始从事WEB后端方面开发了，准备从<a href="https://book.douban.com/subject/6758780/" target="_blank" rel="external">《大规模Web服务开发技术》</a>获取一些知识。  </p>
+</blockquote>
+<h2 id="大数据处理"><a href="#大数据处理" class="headerlink" title="大数据处理"></a>大数据处理</h2><blockquote>
+<p> 简单来说，当一台服务器无法承担负载时，都会采用横向扩展（scale out）或者纵向扩展（scale up）。横向扩展就是通过服务器的数量来分担负载，纵向扩展是通过提高硬件的性能来处理负载。 </p>
+</blockquote>
+<ul>
+<li>难点<br>内存有限，磁盘补位。一般磁盘瓶颈在于寻道与SSD瓶颈在于总线速度与其他一些架构。</li>
+<li>寻找瓶颈的流程 <ol>
+<li>查找平均负载<br>top，uptime查看系统整体情况；</li>
+<li>确认CPU，I/O是否有瓶颈<br>CPU负载：<ul>
+<li>top，sar 确认是用户进程还是系统进程</li>
+<li>ps查看进程状态</li>
+<li>strace或oporate进行追踪<br>I/O负载：</li>
+<li>ps查看是否有大量消耗内存</li>
+<li>程序问题改，内存不够加<a id="more"></a></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>扩展性 <ol>
+<li>CPU<br>增加服务器，负载均衡，优化程序 </li>
+<li>I/O<br>数据库，算法</li>
+</ol>
+</li>
+<li>处理大规模数据的基础知识<ol>
+<li>程序优化<ul>
+<li>部分数据放入内存，将磁盘寻道次数降低；</li>
+<li>可以实现分布式，利用局部性；</li>
+<li>优化数据结构与算法；</li>
+<li>数据压缩，信息搜索技术；</li>
+</ul>
+</li>
+<li>系统层面<ul>
+<li>操作系统的缓存</li>
+<li>以分布式为前提的RDBMS应用</li>
+<li>算法和数据结构</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="操作系统的缓存和分布式"><a href="#操作系统的缓存和分布式" class="headerlink" title="操作系统的缓存和分布式"></a>操作系统的缓存和分布式</h2><blockquote>
+<p>操作系统(Linux)缓存先进行处理，数据量进一步增大时，再考虑分布式。 </p>
+</blockquote>
+<ul>
+<li>操作系统缓存机制 <ol>
+<li>内存与虚拟内存<br> 操作系统将内核中的内存抽象化，以页面(4KB)为单位分配物理内存并管理。实际上是当物理内存不够时,将部分不常用数据放到磁盘中。<br> <strong>页面=虚拟内存的最小单位</strong></li>
+<li>页面缓存原理<br> 进程无法直接访问磁盘，所以访问(虚拟)内存。内核分配过的内存不会释放，而是一直保留下来，这就是页面缓存原理，一般通过VFS来实现。在内存不充足的情况下，采用LRU策略，即读新去老。</li>
+</ol>
+</li>
+<li>利用局部性的分布式 <ol>
+<li>局部分布式<br> 根据访问模式实施分布式，不同的机器缓存不同内容。</li>
+<li>Partitioning(分区)<br> Partitioning就是将一个数据库分割到多台服务器上，比如“以表为单位进行分割”。</li>
+<li>根据访问模式分割成”岛“<br> 比如将爬虫与用户请求分开，将爬虫的请求单独放到岛上。</li>
+</ol>
+</li>
+<li>以页面缓存为基础的运维基本原则 <ol>
+<li>操作系统刚启动时不要将服务器投入生产环境，以防大规模请求造成内存紧张。</li>
+<li>性能测试要在缓存优化后进行。</li>
+</ol>
+</li>
+</ul>
+<h2 id="数据库的横向扩展策略"><a href="#数据库的横向扩展策略" class="headerlink" title="数据库的横向扩展策略"></a>数据库的横向扩展策略</h2><ul>
+<li>分布式MySQL应用要点<ol>
+<li>灵活应用操作系统缓存<br> 考虑全部数据量，尽量让数据量小于物理内存(感觉不可能，笑)。设计表结构的时候要考虑属性大小，比如年龄，最多三位数字，可以使用smallint。</li>
+<li>正确设置索引<br> <a href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html" target="_blank" rel="external">MySQL索引背后的数据结构及算法原理</a>，简单来讲与二叉树相比，B树保证每个节点都保存在一个块中，B+则是进一步优化。索引不仅改善复杂度O(logn)，还能改善寻道次数。</li>
+<li>MySQL的分布式<br> 即主从，主库压力可以分表或交给NoSQL。</li>
+</ol>
+</li>
+<li>MySQL横向扩展和Partitioning <ol>
+<li>避免join–利用where…in…</li>
+<li>4从1主</li>
+</ol>
+</li>
+</ul>
+<h2 id="处理大规模数据时代码重点"><a href="#处理大规模数据时代码重点" class="headerlink" title="处理大规模数据时代码重点"></a>处理大规模数据时代码重点</h2><blockquote>
+<p> 从RDBMS(关系型数据库)中提取数据，建立索引服务器之类的东西，再让Web应用通过RPC(远程过程调用)，Web API(JSON+HTTP)等访问索引服务器。</p>
+</blockquote>
+<ul>
+<li>特殊用途索引<br> 定期取出数据，并根据数据来创建索引，比如搜索用的逆向索引，关键字链接用Trie等。</li>
+</ul>
+<h2 id="压缩编程"><a href="#压缩编程" class="headerlink" title="压缩编程"></a>压缩编程</h2><blockquote>
+<p>需要考虑的是数据大小和I/O加速之间的关系，以紧凑，简洁方式保存整数数据  </p>
+</blockquote>
+<ul>
+<li>可变字节码<br>  二进制编码，去掉前半部分的x余，以最少的字节表示信息，这就是可变字节码。已经排序的序列是递增的，可以以“差”存储已排序的整数。如<strong>[3, 5, 20]</strong> -&gt; <strong>[3, 2, 15]</strong>。由此做到先计算差，再编码为可变字节码。</li>
+<li>压缩<br>  压缩原理是根据符号的概率分布，给出现频率高的分配较短的编码。<br>，给出现频率低的分配较长的编码。</li>
+</ul>
+<h2 id="算法实用化"><a href="#算法实用化" class="headerlink" title="算法实用化"></a>算法实用化</h2><pre><code>数据结构是数组、树结构等存储或表现对象数据的结构。对于算法，必须依照算法中的常用操作选择数据结构。
+常数项指算法实现中不依赖于输入大小，但却不得不执行的操作。如if分支等等。比如说快排相对其他O(nlogn)快，是因为快排特点使得CPU缓存容易生效。
+</code></pre><h2 id="全文搜索技术"><a href="#全文搜索技术" class="headerlink" title="全文搜索技术"></a>全文搜索技术</h2><blockquote>
+<p>逆向索引 = 字典文件 + 置入文件</p>
+</blockquote>
+<ul>
+<li>搜索系统的架构<br>  搜索系统的一般步骤：爬行-&gt;存储-&gt;建立索引-&gt;搜索-&gt;评分-&gt;显示结果。</li>
+<li>全文搜索种类<br>  书中一共是介绍了三种：grep类型、后缀类型、逆向索引类型。<ul>
+<li>grep类型<br>  从头开始读取搜索对象，即时性良好，查询扩展容易，非主流。</li>
+<li>后缀类型<br>  用可搜索的形式存储搜索对象的全文，如Trie等，非主流。</li>
+<li>逆向索引类型<br>  逆向索引先要在文档之外另行创建逆向索引，建立term和文档的关系。所有term的集合称为字典，逆向索引左字典，右文档。term右边放的是存在该term的文档，所以搜索时按照term进行搜索。</li>
+</ul>
+</li>
+<li>字典的创建方法<ul>
+<li>将单词当作term处理<ol>
+<li>字典+Aho-Corasick算法</li>
+<li>语素分析<br> 推测词性-&gt;创建字典(能预测字典中没有的单词)-&gt;考虑单词排序(对单词排序进行机器学习)-&gt;可以自定义字典。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="WEB后台"><a href="#WEB后台" class="headerlink" title="WEB后台"></a>WEB后台</h2><blockquote>
+<p>WEB服务基础设施三要点：低成本高效率；重视可扩展性、响应性方面的设计；重视开发速度；</p>
+</blockquote>
+<ul>
+<li>基础组成<br>  从技术模型上讲，有垂直结合模型和水平分散模型两个概念。垂直结合模型指从物理层到最上层的服务设计完全由同一公司构建，比如阿里云全家桶。水平分散模型就是各层由不同企业的系统提供，作为一个整体来构建系统。</li>
+</ul>
+<h2 id="保证冗余性和系统稳定性"><a href="#保证冗余性和系统稳定性" class="headerlink" title="保证冗余性和系统稳定性"></a>保证冗余性和系统稳定性</h2><blockquote>
+<p>最终的是去除SPOF(单点故障)</p>
+</blockquote>
+<ul>
+<li><p>保证冗余性<br> 开端做法事增加服务器，保证处理能力。一般应对服务器故障，策略就是负载均衡器实现失败转移(failover)和失败恢复(failback),让故障服务器自动下线。失败转移就是使其自动离线，失败恢复就是让恢复正常的服务器再次上线。负载均衡器对服务器定期检查，判断服务器状况，这是最基本的冗余性。</p>
+</li>
+<li><p>系统稳定化与对策<br>  稳定性与资源利用率，与速度之间需要权衡。实际一般是维持适当余量和消灭不稳定因素。</p>
+</li>
+</ul>
+<h2 id="提高硬件资源的使用率"><a href="#提高硬件资源的使用率" class="headerlink" title="提高硬件资源的使用率"></a>提高硬件资源的使用率</h2><ul>
+<li>虚拟化技术<br>  加入主要利用空闲资源的虚拟机操作系统，cpu空闲-&gt;Web服务器；I/O空闲-&gt;数据库服务器;内存空闲-&gt;缓存服务器。资源消耗类似的，要避免组合在一起使用。</li>
+</ul>
+<h2 id="WEB服务和网络"><a href="#WEB服务和网络" class="headerlink" title="WEB服务和网络"></a>WEB服务和网络</h2><ul>
+<li>网络架构的层次化(三层架构)<br>  访问层(百台)-&gt;分发层(千台)-&gt;核心层(万台)。</li>
+<li>超越10Gbps<br>  获取AS编号；连接IX进行流量控制；用BGP控制路由。</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/大规模Web服务开发技术/" rel="tag"># 大规模Web服务开发技术</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/07/树莓派安装/" rel="next" title="树莓派安装">
+                <i class="fa fa-chevron-left"></i> 树莓派安装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/20/解决Python模块因互相导入导致的ImportError错误/" rel="prev" title="解决Python模块因互相导入导致的ImportError错误">
+                解决Python模块因互相导入导致的ImportError错误 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oma8ea83e.bkt.clouddn.com/icon.jpg"
+               alt="big_pineapple" />
+          <p class="site-author-name" itemprop="name">big_pineapple</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/GJBLUE" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#大数据处理"><span class="nav-number">1.</span> <span class="nav-text">大数据处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作系统的缓存和分布式"><span class="nav-number">2.</span> <span class="nav-text">操作系统的缓存和分布式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库的横向扩展策略"><span class="nav-number">3.</span> <span class="nav-text">数据库的横向扩展策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理大规模数据时代码重点"><span class="nav-number">4.</span> <span class="nav-text">处理大规模数据时代码重点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#压缩编程"><span class="nav-number">5.</span> <span class="nav-text">压缩编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法实用化"><span class="nav-number">6.</span> <span class="nav-text">算法实用化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全文搜索技术"><span class="nav-number">7.</span> <span class="nav-text">全文搜索技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB后台"><span class="nav-number">8.</span> <span class="nav-text">WEB后台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保证冗余性和系统稳定性"><span class="nav-number">9.</span> <span class="nav-text">保证冗余性和系统稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提高硬件资源的使用率"><span class="nav-number">10.</span> <span class="nav-text">提高硬件资源的使用率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB服务和网络"><span class="nav-number">11.</span> <span class="nav-text">WEB服务和网络</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">big_pineapple</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

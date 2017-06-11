@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="生成器,yield," />
+  <meta name="keywords" content="yield,生成器," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="目前自己使用的Python版本为2.7，本篇仅针对2.7进行学习研究。 生成器 首先，生成器(Generator)是一个函数，它会生成一个可迭代的对象。和列表最大的区别在于，生成器可以在迭代的过程中一边循环一边计算，不必像列表那般创建完整的序列，从而节省内存空间。 其次就是创建完生成器后，它会返回一个生成器对象，这个生成器对象使用next()进行调用。定义方面生成器和列表的区别就是用()代替[]，">
-<meta name="keywords" content="生成器,yield">
+<meta name="description" content="在聊生成器之前，必须要说一说什么是可迭代对象。在 Python 中，所有集合都可以迭代。而序列可以迭代的原因，则依赖于iter函数的实现。">
+<meta name="keywords" content="yield,生成器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="生成器与yield">
 <meta property="og:url" content="http://www.jblue.xyz/2017/03/07/生成器与yield/index.html">
 <meta property="og:site_name" content="小狗的狗窝">
-<meta property="og:description" content="目前自己使用的Python版本为2.7，本篇仅针对2.7进行学习研究。 生成器 首先，生成器(Generator)是一个函数，它会生成一个可迭代的对象。和列表最大的区别在于，生成器可以在迭代的过程中一边循环一边计算，不必像列表那般创建完整的序列，从而节省内存空间。 其次就是创建完生成器后，它会返回一个生成器对象，这个生成器对象使用next()进行调用。定义方面生成器和列表的区别就是用()代替[]，">
-<meta property="og:updated_time" content="2017-05-23T05:12:06.000Z">
+<meta property="og:description" content="在聊生成器之前，必须要说一说什么是可迭代对象。在 Python 中，所有集合都可以迭代。而序列可以迭代的原因，则依赖于iter函数的实现。">
+<meta property="og:updated_time" content="2017-06-11T04:35:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生成器与yield">
-<meta name="twitter:description" content="目前自己使用的Python版本为2.7，本篇仅针对2.7进行学习研究。 生成器 首先，生成器(Generator)是一个函数，它会生成一个可迭代的对象。和列表最大的区别在于，生成器可以在迭代的过程中一边循环一边计算，不必像列表那般创建完整的序列，从而节省内存空间。 其次就是创建完生成器后，它会返回一个生成器对象，这个生成器对象使用next()进行调用。定义方面生成器和列表的区别就是用()代替[]，">
+<meta name="twitter:description" content="在聊生成器之前，必须要说一说什么是可迭代对象。在 Python 中，所有集合都可以迭代。而序列可以迭代的原因，则依赖于iter函数的实现。">
 
 
 
@@ -360,12 +360,21 @@
       
 
       
-        <p>目前自己使用的Python版本为2.7，本篇仅针对2.7进行学习研究。</p>
-<p>生成器</p>
-<p>首先，生成器(Generator)是一个函数，它会生成一个可迭代的对象。和列表最大的区别在于，生成器可以在迭代的过程中一边循环一边计算，不必像列表那般创建完整的序列，从而节省内存空间。 其次就是创建完生成器后，它会返回一个生成器对象，这个生成器对象使用next()进行调用。定义方面生成器和列表的区别就是用()代替[]，一样可以用推导式。<br><a id="more"></a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">1</span>]: g = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>))  <span class="comment"># 创建一个生成器</span></div><div class="line">In [<span class="number">2</span>]: g</div><div class="line">Out[<span class="number">2</span>]: &lt;generator object &lt;genexpr&gt; at <span class="number">0x10c3605f0</span>&gt;</div><div class="line">In [<span class="number">5</span>]: g.next()</div><div class="line">Out[<span class="number">5</span>]: <span class="number">0</span></div><div class="line">In [<span class="number">6</span>]: g.next()</div><div class="line">Out[<span class="number">6</span>]: <span class="number">1</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
+        <blockquote>
+<p>在聊生成器之前，必须要说一说什么是可迭代对象。在 Python 中，所有集合都可以迭代。而序列可以迭代的原因，则依赖于iter函数的实现。  </p>
+</blockquote>
+<a id="more"></a>
+<h2 id="可迭代对象的机制-引用自《fluent-python》"><a href="#可迭代对象的机制-引用自《fluent-python》" class="headerlink" title="可迭代对象的机制(引用自《fluent python》)"></a>可迭代对象的机制(引用自《fluent python》)</h2><p>解释器需要迭代对象x时，会自动调用iter(x)。需要注意的是，可迭代对象不等于迭代器。内置的 iter 函数有以下作用：</p>
+<ol>
+<li>检查对象是否实现了 <strong><strong>iter</strong></strong> 方法，如果实现了就调用它，获取一个迭代器。</li>
+<li>如果没有实现 <strong>iter</strong> 方法，但是实现了 <strong>getitem</strong> 方法，Python 会创建一个迭代<br>器，尝试按顺序(从索引 0 开始)获取元素。</li>
+<li>如果尝试失败，Python抛出TypeError异常，通常会提示“C object is not iterable”(C<br>对象不可迭代)，其中 C 是目标对象所属的类。<br>iter()有个实用例子，逐行读取文件，直到遇到空行或者到达文件末尾为止：<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(<span class="string">'mydata.txt'</span>) <span class="keyword">as</span> fp:</div><div class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> iter(fp.readline, <span class="string">''</span>):</div><div class="line">        process_line(line)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="可迭代对象和迭代器-引用自《fluent-python》"><a href="#可迭代对象和迭代器-引用自《fluent-python》" class="headerlink" title="可迭代对象和迭代器(引用自《fluent python》)"></a>可迭代对象和迭代器(引用自《fluent python》)</h2><p><strong>可迭代的对象</strong>：<br>    使用 iter 内置函数可以获取迭代器的对象。如果对象实现了能返回迭代器的 <strong>iter</strong> 方法，那么对象就是可迭代的。序列都可以迭代;实现了 <strong>getitem</strong> 方法，而且其参 数是从零开始的索引，这种对象也可以迭代。<br><strong>迭代器</strong>:<br>    迭代器是这样的对象:实现了无参数的 <strong>next</strong> 方法，返回序列中的下一个元素;如果没有元素了，那么抛出 StopIteration 异常。Python中的迭代器还实现了 <strong>iter</strong> 方 法，因此迭代器也可以迭代。简单来说，迭代器只需 <strong>next</strong> 和 <strong>iter</strong> 两个方法。  </p>
+<h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><p>首先，生成器(Generator)是一个函数，它会生成一个可迭代的对象。所有生成器都是迭代器，因为生成器完全实现了迭代器接口。和列表最大的区别在于，生成器可以在迭代的过程中一边循环一边计算，不必像列表那般创建完整的序列，从而节省内存空间。 其次就是创建完生成器后，它会返回一个生成器对象，这个生成器对象使用next()进行调用。定义方面生成器和列表的区别就是用()代替[]，一样可以用推导式。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">1</span>]: g = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>))  <span class="comment"># 创建一个生成器</span></div><div class="line">In [<span class="number">2</span>]: g</div><div class="line">Out[<span class="number">2</span>]: &lt;generator object &lt;genexpr&gt; at <span class="number">0x10c3605f0</span>&gt;</div><div class="line">In [<span class="number">5</span>]: g.next()</div><div class="line">Out[<span class="number">5</span>]: <span class="number">0</span></div><div class="line">In [<span class="number">6</span>]: g.next()</div><div class="line">Out[<span class="number">6</span>]: <span class="number">1</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
 <p>此处需要注意的问题是数组下标越界问题，当然一般使用可以借助for循环。生成器也提供了close()方法，可以主动进行关闭(通常不必手动调用的)。</p>
-<p>yield</p>
-<p>函数使用yield关键字可以生成一个生成器对象，这也是生成器的常规使用方式。生成器在调用next()方法时，生成器会不断地执行语句，直到执行到yield语句为止。yield语句在此时返回一个结果，然后继续执行yield之后的语句。</p>
+<h2 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h2><p>函数使用yield关键字可以生成一个生成器对象，这也是生成器的常规使用方式。生成器在调用next()方法时，生成器会不断地执行语句，直到执行到yield语句为止。yield语句在此时返回一个结果，然后继续执行yield之后的语句。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">1</span>]: <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(n)</span>:</span></div><div class="line">  ....:     <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</div><div class="line">  ....:         <span class="keyword">yield</span> i</div><div class="line"></div><div class="line">In [<span class="number">2</span>]: res = func(<span class="number">3</span>)</div><div class="line"></div><div class="line">In [<span class="number">3</span>]: <span class="keyword">for</span> i <span class="keyword">in</span> res:</div><div class="line">   ....:     <span class="keyword">print</span> i</div></pre></td></tr></table></figure>
 <p>这里需要理解的是，调用函数的时候,函数里的代码并没有运行。函数仅仅返回生成器对象，即res。当for语句迭代生成器返回生成器对象时，函数func里的代码才开始执行，直到碰到yield。</p>
 
@@ -397,9 +406,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/生成器/" rel="tag"># 生成器</a>
-          
             <a href="/tags/yield/" rel="tag"># yield</a>
+          
+            <a href="/tags/生成器/" rel="tag"># 生成器</a>
           
         </div>
       
@@ -471,8 +480,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://oma8ea83e.bkt.clouddn.com/icon.jpg"
@@ -487,7 +505,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -509,7 +527,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -545,6 +563,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#可迭代对象的机制-引用自《fluent-python》"><span class="nav-number">1.</span> <span class="nav-text">可迭代对象的机制(引用自《fluent python》)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可迭代对象和迭代器-引用自《fluent-python》"><span class="nav-number">2.</span> <span class="nav-text">可迭代对象和迭代器(引用自《fluent python》)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成器"><span class="nav-number">3.</span> <span class="nav-text">生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yield"><span class="nav-number">4.</span> <span class="nav-text">yield</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

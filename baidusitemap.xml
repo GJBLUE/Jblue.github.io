@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://www.jblue.xyz/2017/06/24/requests%E8%A7%A3%E6%9E%90%E9%A1%B5%E9%9D%A2%E8%BF%87%E6%85%A2%E4%B8%80%E8%A7%A3/</loc>
+    <lastmod>2017-07-29T07:29:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>requests解析页面过慢一解</title>
+        <pubTime>2017-06-24T07:22:33.000Z</pubTime>
+        
+        <tag>requests</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://www.jblue.xyz/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jblue.xyz/2017/04/16/%E3%80%8A%E9%AB%98%E6%80%A7%E8%83%BD%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-07-29T07:21:24.000Z</lastmod>
+    <data>
+        <display>
+        <title>《高性能网站建设》读书笔记</title>
+        <pubTime>2017-04-16T07:14:54.000Z</pubTime>
+        
+        <tag>Web</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://www.jblue.xyz/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jblue.xyz/2017/03/15/%E3%80%8A%E5%A4%A7%E8%A7%84%E6%A8%A1Web%E6%9C%8D%E5%8A%A1%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-07-29T07:18:43.000Z</lastmod>
+    <data>
+        <display>
+        <title>《大规模Web服务开发技术》读书笔记</title>
+        <pubTime>2017-03-15T05:15:49.000Z</pubTime>
+        
+        <tag>Web</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://www.jblue.xyz/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jblue.xyz/2017/06/25/%E3%80%8A%E4%B8%83%E5%91%A8%E4%B8%83%E8%AF%AD%E8%A8%80%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-07-29T07:14:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>《七周七语言》读书笔记</title>
+        <pubTime>2017-06-25T07:08:26.000Z</pubTime>
+        
+        <tag>技术</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://www.jblue.xyz/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jblue.xyz/2017/07/09/%E3%80%8Afluent-python%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-07-25T14:01:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>《fluent python》读书笔记</title>
+        <pubTime>2017-07-09T08:52:52.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://www.jblue.xyz/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jblue.xyz/2017/06/01/MongoDB%E5%AE%89%E8%A3%85%E8%B8%A9%E5%9D%91%E8%AE%B0/</loc>
+    <lastmod>2017-07-25T14:01:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>MongoDB安装踩坑记</title>
+        <pubTime>2017-06-01T13:50:19.000Z</pubTime>
+        
+        <tag>MongoDB</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据库" url="http://www.jblue.xyz/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jblue.xyz/2017/03/04/Flask-Gunicorn-Nginx-%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2017-06-11T04:39:19.000Z</lastmod>
+    <data>
+        <display>
+        <title>Flask + Gunicorn + Nginx 部署</title>
+        <pubTime>2017-03-04T10:02:38.000Z</pubTime>
+        
+        <tag>Flask</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://www.jblue.xyz/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jblue.xyz/2017/03/04/Hexo%E5%AE%9E%E7%8E%B0%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2017-06-11T04:37:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo实现静态博客部署</title>
+        <pubTime>2017-03-04T05:22:58.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://www.jblue.xyz/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jblue.xyz/2017/03/07/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2017-06-11T04:37:11.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派安装</title>
+        <pubTime>2017-03-07T10:14:27.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="玩具" url="http://www.jblue.xyz/categories/%E7%8E%A9%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jblue.xyz/2017/03/07/%E7%94%9F%E6%88%90%E5%99%A8%E4%B8%8Eyield/</loc>
+    <lastmod>2017-06-11T04:35:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>生成器与yield</title>
+        <pubTime>2017-03-07T04:59:26.000Z</pubTime>
+        
+        <tag>yield</tag>
+         
+        <tag>生成器</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://www.jblue.xyz/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jblue.xyz/2017/06/11/yield%E4%B8%8E%E5%8D%8F%E7%A8%8B/</loc>
+    <lastmod>2017-06-11T04:32:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>yield与协程</title>
+        <pubTime>2017-06-11T04:23:39.000Z</pubTime>
+        
+        <tag>yield</tag>
+         
+        <tag>协程</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://www.jblue.xyz/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jblue.xyz/2017/03/20/%E8%A7%A3%E5%86%B3Python%E6%A8%A1%E5%9D%97%E5%9B%A0%E4%BA%92%E7%9B%B8%E5%AF%BC%E5%85%A5%E5%AF%BC%E8%87%B4%E7%9A%84ImportError%E9%94%99%E8%AF%AF/</loc>
+    <lastmod>2017-06-11T04:22:30.000Z</lastmod>
+    <data>
+        <display>
+        <title>解决Python模块因互相导入导致的ImportError错误</title>
+        <pubTime>2017-03-20T05:02:55.000Z</pubTime>
+        
+        <tag>import</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://www.jblue.xyz/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jblue.xyz/2017/05/23/%E3%80%8A24%E5%B0%8F%E6%97%B6365%E5%A4%A9%E4%B8%8D%E9%97%B4%E6%96%AD%E6%9C%8D%E5%8A%A1-%E6%9C%8D%E5%8A%A1%E5%99%A8-%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E3%80%8B-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-06-04T23:26:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>《24小时365天不间断服务:服务器/基础设施核心技术》 读书笔记</title>
+        <pubTime>2017-05-23T05:18:14.000Z</pubTime>
+        
+        <tag>24小时365天不间断服务:服务器/基础设施核心技术</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://www.jblue.xyz/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.jblue.xyz/2017/03/07/%E5%AF%BB%E8%81%8C%E6%89%80%E6%84%9F/</loc>
+    <lastmod>2017-05-23T05:15:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>寻职所感</title>
+        <pubTime>2017-03-07T05:13:02.000Z</pubTime>
+        
+        <tag>日记</tag>
+         
+         
+           
+             
+              <breadCrumb title="随笔" url="http://www.jblue.xyz/categories/%E9%9A%8F%E7%AC%94/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+</urlset>

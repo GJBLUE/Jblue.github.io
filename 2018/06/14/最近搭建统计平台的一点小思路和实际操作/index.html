@@ -92,13 +92,13 @@
 
 <meta name="description" content="title: 最近搭建统计平台的一点小思路和实际操作date: 2017-09-14 09:45:40tags: 想法   categories: 随笔 一个小的统计平台，收集日志分析并进行统计的流程。目前准备使用(之前就只用过Django+MomgoDB，对自己来说想创造些新需求): Django+MomgoDB+Beanstalkd+uWSGI+Nginx+Sentry+Supervisor">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小狗的狗窝">
-<meta property="og:url" content="http://www.jblue.xyz/2018/06/14/“最近搭建统计平台的一点小思路和实际操作”/index.html">
-<meta property="og:site_name" content="小狗的狗窝">
+<meta property="og:title" content="Jblue">
+<meta property="og:url" content="http://www.pipeapple.xyz/2018/06/14/最近搭建统计平台的一点小思路和实际操作/index.html">
+<meta property="og:site_name" content="Jblue">
 <meta property="og:description" content="title: 最近搭建统计平台的一点小思路和实际操作date: 2017-09-14 09:45:40tags: 想法   categories: 随笔 一个小的统计平台，收集日志分析并进行统计的流程。目前准备使用(之前就只用过Django+MomgoDB，对自己来说想创造些新需求): Django+MomgoDB+Beanstalkd+uWSGI+Nginx+Sentry+Supervisor">
-<meta property="og:updated_time" content="2018-06-14T01:48:07.275Z">
+<meta property="og:updated_time" content="2018-06-14T01:56:09.303Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小狗的狗窝">
+<meta name="twitter:title" content="Jblue">
 <meta name="twitter:description" content="title: 最近搭建统计平台的一点小思路和实际操作date: 2017-09-14 09:45:40tags: 想法   categories: 随笔 一个小的统计平台，收集日志分析并进行统计的流程。目前准备使用(之前就只用过Django+MomgoDB，对自己来说想创造些新需求): Django+MomgoDB+Beanstalkd+uWSGI+Nginx+Sentry+Supervisor">
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://www.jblue.xyz/2018/06/14/“最近搭建统计平台的一点小思路和实际操作”/"/>
+  <link rel="canonical" href="http://www.pipeapple.xyz/2018/06/14/最近搭建统计平台的一点小思路和实际操作/"/>
 
 
 
 
 
-  <title> | 小狗的狗窝</title>
+  <title> | Jblue</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -170,7 +170,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">小狗的狗窝</span>
+        <span class="site-title">Jblue</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -273,7 +273,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.jblue.xyz/2018/06/14/“最近搭建统计平台的一点小思路和实际操作”/">
+    <link itemprop="mainEntityOfPage" href="http://www.pipeapple.xyz/2018/06/14/最近搭建统计平台的一点小思路和实际操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="big_pineapple">
@@ -282,7 +282,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小狗的狗窝">
+      <meta itemprop="name" content="Jblue">
     </span>
 
     
@@ -340,9 +340,9 @@
         <hr>
 <p>title: 最近搭建统计平台的一点小思路和实际操作<br>date: 2017-09-14 09:45:40<br>tags: 想法  </p>
 <h2 id="categories-随笔"><a href="#categories-随笔" class="headerlink" title="categories: 随笔"></a>categories: 随笔</h2><blockquote>
-<p>一个小的统计平台，收集日志分析并进行统计的流程。目前准备使用(之前就只用过Django+MomgoDB，对自己来说想创造些新需求): Django+MomgoDB+Beanstalkd+uWSGI+Nginx+Sentry+Supervisor<br>备用的：Redis，Vue2   </p>
+<p>一个小的统计平台，收集日志分析并进行统计的流程。目前准备使用(之前就只用过Django+MomgoDB，对自己来说想创造些新需求): Django+MomgoDB+Beanstalkd+uWSGI+Nginx+Sentry+Supervisor<br>备用的：Redis，Vue2     </p>
 </blockquote>
-<a id="more"></a>
+<a id="more"></a>  
 <h2 id="新玩意"><a href="#新玩意" class="headerlink" title="新玩意"></a>新玩意</h2><ol>
 <li><a href="http://kr.github.io/beanstalkd/download.html" target="_blank" rel="external">Beanstalkd</a>,<a href="https://github.com/kr/beanstalkd/blob/master/doc/protocol.zh-CN.md" target="_blank" rel="external">这里</a>有一份中文的文档。库方面用的是<a href="https://github.com/earl/beanstalkc" target="_blank" rel="external">beanstalkc</a>,第一次使用mq，原子性和持久化，免去了lock的烦恼，兴奋，感觉还有很多东西等我挖掘。关于启动命令，可用<strong>/usr/bin/beanstalkd -l 0.0.0.0 -p 11300 -b /var/lib/beanstalkd/binlog -F</strong>，-b 开启<a href="https://segmentfault.com/a/1190000009604082" target="_blank" rel="external">binlog</a>，断电后重启会自动恢复任务。-F可以看<a href="https://github.com/kr/beanstalkd/issues/16" target="_blank" rel="external">这个问题</a>。</li>
 <li>Supervisor这篇<a href="http://www.restran.net/2015/10/04/supervisord-tutorial/" target="_blank" rel="external">文章</a>，至少上手挺快。实际使用之后很舒服，<strong>supervisorctl reload</strong>更新配置重启很简单。</li>

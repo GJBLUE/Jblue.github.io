@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.pipeapple.xyz/2017/12/15/subprocess%E6%A8%A1%E5%9D%97%E4%B8%ADshell-True%E7%9A%84%E9%98%BB%E5%A1%9E%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2018-06-15T12:23:17.164Z</lastmod>
+    <lastmod>2018-06-15T12:31:49.088Z</lastmod>
     <data>
         <display>
         <title>subprocess模块中shell=True的阻塞问题</title>

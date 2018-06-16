@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="yield,生成器," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -90,17 +90,16 @@
 
 
 
-<meta name="description" content="在聊生成器之前，必须要说一说什么是可迭代对象。在 Python 中，所有集合都可以迭代。而序列可以迭代的原因，则依赖于iter函数的实现。">
-<meta name="keywords" content="yield,生成器">
+<meta name="description" content="title: Python AES解密date: 2017-11-24 11:33:16tags: 密码  categories: Python AES即高级加密标准，这次准备是采用AES256/CBC/PKCS7Padding。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="生成器与yield">
-<meta property="og:url" content="http://www.pipeapple.xyz/2017/03/07/生成器与yield/index.html">
+<meta property="og:title" content="Jblue">
+<meta property="og:url" content="http://www.pipeapple.xyz/2018/06/16/Python-AES解密/index.html">
 <meta property="og:site_name" content="Jblue">
-<meta property="og:description" content="在聊生成器之前，必须要说一说什么是可迭代对象。在 Python 中，所有集合都可以迭代。而序列可以迭代的原因，则依赖于iter函数的实现。">
-<meta property="og:updated_time" content="2017-06-11T04:35:09.000Z">
+<meta property="og:description" content="title: Python AES解密date: 2017-11-24 11:33:16tags: 密码  categories: Python AES即高级加密标准，这次准备是采用AES256/CBC/PKCS7Padding。">
+<meta property="og:updated_time" content="2018-06-16T03:44:22.504Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="生成器与yield">
-<meta name="twitter:description" content="在聊生成器之前，必须要说一说什么是可迭代对象。在 Python 中，所有集合都可以迭代。而序列可以迭代的原因，则依赖于iter函数的实现。">
+<meta name="twitter:title" content="Jblue">
+<meta name="twitter:description" content="title: Python AES解密date: 2017-11-24 11:33:16tags: 密码  categories: Python AES即高级加密标准，这次准备是采用AES256/CBC/PKCS7Padding。">
 
 
 
@@ -128,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://www.pipeapple.xyz/2017/03/07/生成器与yield/"/>
+  <link rel="canonical" href="http://www.pipeapple.xyz/2018/06/16/Python-AES解密/"/>
 
 
 
 
 
-  <title>生成器与yield | Jblue</title>
+  <title> | Jblue</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +273,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.pipeapple.xyz/2017/03/07/生成器与yield/">
+    <link itemprop="mainEntityOfPage" href="http://www.pipeapple.xyz/2018/06/16/Python-AES解密/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="big_pineapple">
@@ -291,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">生成器与yield</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -303,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T12:59:26+08:00">
-                2017-03-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-16T11:33:16+08:00">
+                2018-06-16
               </time>
             
 
@@ -313,28 +312,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -360,23 +337,60 @@
       
 
       
-        <blockquote>
-<p>在聊生成器之前，必须要说一说什么是可迭代对象。在 Python 中，所有集合都可以迭代。而序列可以迭代的原因，则依赖于iter函数的实现。  </p>
+        <hr>
+<p>title: Python AES解密<br>date: 2017-11-24 11:33:16<br>tags: 密码 </p>
+<h2 id="categories-Python"><a href="#categories-Python" class="headerlink" title="categories: Python"></a>categories: Python</h2><blockquote>
+<p><a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86" target="_blank" rel="external">AES</a>即高级加密标准，这次准备是采用AES256/CBC/PKCS7Padding。  </p>
 </blockquote>
-<a id="more"></a>
-<h2 id="可迭代对象的机制-引用自《fluent-python》"><a href="#可迭代对象的机制-引用自《fluent-python》" class="headerlink" title="可迭代对象的机制(引用自《fluent python》)"></a>可迭代对象的机制(引用自《fluent python》)</h2><p>解释器需要迭代对象x时，会自动调用iter(x)。需要注意的是，可迭代对象不等于迭代器。内置的 iter 函数有以下作用：</p>
-<ol>
-<li>检查对象是否实现了 <strong><strong>iter</strong></strong> 方法，如果实现了就调用它，获取一个迭代器。</li>
-<li>如果没有实现 <strong>iter</strong> 方法，但是实现了 <strong>getitem</strong> 方法，Python 会创建一个迭代<br>器，尝试按顺序(从索引 0 开始)获取元素。</li>
-<li>如果尝试失败，Python抛出TypeError异常，通常会提示“C object is not iterable”(C<br>对象不可迭代)，其中 C 是目标对象所属的类。<br>iter()有个实用例子，逐行读取文件，直到遇到空行或者到达文件末尾为止：<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(<span class="string">'mydata.txt'</span>) <span class="keyword">as</span> fp:</div><div class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> iter(fp.readline, <span class="string">''</span>):</div><div class="line">        process_line(line)</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="可迭代对象和迭代器-引用自《fluent-python》"><a href="#可迭代对象和迭代器-引用自《fluent-python》" class="headerlink" title="可迭代对象和迭代器(引用自《fluent python》)"></a>可迭代对象和迭代器(引用自《fluent python》)</h2><p><strong>可迭代的对象</strong>：<br>    使用 iter 内置函数可以获取迭代器的对象。如果对象实现了能返回迭代器的 <strong>iter</strong> 方法，那么对象就是可迭代的。序列都可以迭代;实现了 <strong>getitem</strong> 方法，而且其参 数是从零开始的索引，这种对象也可以迭代。<br><strong>迭代器</strong>:<br>    迭代器是这样的对象:实现了无参数的 <strong>next</strong> 方法，返回序列中的下一个元素;如果没有元素了，那么抛出 StopIteration 异常。Python中的迭代器还实现了 <strong>iter</strong> 方 法，因此迭代器也可以迭代。简单来说，迭代器只需 <strong>next</strong> 和 <strong>iter</strong> 两个方法。  </p>
-<h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><p>首先，生成器(Generator)是一个函数，它会生成一个可迭代的对象。所有生成器都是迭代器，因为生成器完全实现了迭代器接口。和列表最大的区别在于，生成器可以在迭代的过程中一边循环一边计算，不必像列表那般创建完整的序列，从而节省内存空间。 其次就是创建完生成器后，它会返回一个生成器对象，这个生成器对象使用next()进行调用。定义方面生成器和列表的区别就是用()代替[]，一样可以用推导式。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">1</span>]: g = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>))  <span class="comment"># 创建一个生成器</span></div><div class="line">In [<span class="number">2</span>]: g</div><div class="line">Out[<span class="number">2</span>]: &lt;generator object &lt;genexpr&gt; at <span class="number">0x10c3605f0</span>&gt;</div><div class="line">In [<span class="number">5</span>]: g.next()</div><div class="line">Out[<span class="number">5</span>]: <span class="number">0</span></div><div class="line">In [<span class="number">6</span>]: g.next()</div><div class="line">Out[<span class="number">6</span>]: <span class="number">1</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
-<p>此处需要注意的问题是数组下标越界问题，当然一般使用可以借助for循环。生成器也提供了close()方法，可以主动进行关闭(通常不必手动调用的)。</p>
-<h2 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h2><p>函数使用yield关键字可以生成一个生成器对象，这也是生成器的常规使用方式。生成器在调用next()方法时，生成器会不断地执行语句，直到执行到yield语句为止。yield语句在此时返回一个结果，然后继续执行yield之后的语句。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">1</span>]: <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(n)</span>:</span></div><div class="line">  ....:     <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</div><div class="line">  ....:         <span class="keyword">yield</span> i</div><div class="line"></div><div class="line">In [<span class="number">2</span>]: res = func(<span class="number">3</span>)</div><div class="line"></div><div class="line">In [<span class="number">3</span>]: <span class="keyword">for</span> i <span class="keyword">in</span> res:</div><div class="line">   ....:     <span class="keyword">print</span> i</div></pre></td></tr></table></figure>
-<p>这里需要理解的是，调用函数的时候,函数里的代码并没有运行。函数仅仅返回生成器对象，即res。当for语句迭代生成器返回生成器对象时，函数func里的代码才开始执行，直到碰到yield。</p>
+<a id="more"></a> 
+<h2 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h2><p>调试过程中遇到了不少坑，说白了就是客户端加密出来的我解不出来，我加密的客户端解不出来，各自加密各自都能解密。当时很是费解，因为虽然我们都是调的各自的库(自己使用的是pycrypto)，但是在密钥一致的情况下，不应该是这个情况。根据<a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86" target="_blank" rel="external">WIKI</a>上的描述，也该是如此。<br>询问客户端key，iv是如何生成，得到的回复是指定16位的key之后(IOS表示只能输入16位)，剩下的都是自动填充，至于填充的是什么，告诉我的是0。但是这不对啊，几次反复之后我们决定固定写死iv，我也不去尝试解通过AES128来解了，既然客户端确定是AES256／CBC，那就先把这个试个遍再说。最后在sf上找到了这篇<a href="https://stackoverflow.com/questions/12524994/encrypt-decrypt-using-pycrypto-aes-256" target="_blank" rel="external">Encrypt &amp; Decrypt using PyCrypto AES 256</a>，简单的改写了下:  </p>
+<pre><code class="Python"><span class="keyword">import</span> json
+<span class="keyword">import</span> hashlib
+<span class="keyword">import</span> base64
+<span class="keyword">from</span> Crypto <span class="keyword">import</span> Random
+<span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES
+
+
+<span class="class"><span class="keyword">class</span> <span class="title">AESCipher</span><span class="params">(object)</span>:</span>
+
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, key, iv)</span>:</span>
+        self.bs = <span class="number">32</span>
+        self.iv = iv
+        self.key = hashlib.sha256(key.encode()).digest()
+
+    <span class="function"><span class="keyword">def</span> <span class="title">encrypt</span><span class="params">(self, raw)</span>:</span>
+        raw = self._pad(raw)
+        iv = self.iv
+        cipher = AES.new(self.key, AES.MODE_CBC, iv)
+        <span class="keyword">return</span> base64.b64encode(cipher.encrypt(raw))
+
+    <span class="function"><span class="keyword">def</span> <span class="title">decrypt</span><span class="params">(self, enc)</span>:</span>
+        enc = base64.b64decode(enc)
+        iv = self.iv
+        cipher = AES.new(self.key, AES.MODE_CBC, iv)
+        <span class="keyword">return</span> self._unpad(cipher.decrypt(enc))
+
+    <span class="function"><span class="keyword">def</span> <span class="title">_pad</span><span class="params">(self, s)</span>:</span>
+        <span class="keyword">return</span> s + (self.bs - len(s) % self.bs) * chr(self.bs - len(s) % self.bs)
+
+<span class="meta">    @staticmethod</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">_unpad</span><span class="params">(s)</span>:</span>
+        <span class="keyword">return</span> s[:-ord(s[len(s)<span class="number">-1</span>:])]  <span class="comment"># 去除末尾的填充字符</span>
+</code></pre>
+<p>主要就是改了下iv的生成处理方式，在经过客户端的调试(同样进行iv固定)，最终解决了这个问题。刚爬出AES，只闻道友请留步，又掉进JSON的坑。</p>
+<h2 id="关于JSON解析"><a href="#关于JSON解析" class="headerlink" title="关于JSON解析"></a>关于JSON解析</h2><p>关于json的解析，很简单，这里给个简单的示例。对于dictionaries，keys需要是字符串类型(字典中任何非字符串类型的key在编码时会先转换为字符串)：  </p>
+<pre><code class="Python">In [<span class="number">1</span>]: a = {<span class="number">1</span>:<span class="number">2</span>}
+
+In [<span class="number">2</span>]: <span class="keyword">import</span> json
+
+In [<span class="number">3</span>]: json.dumps(a)
+Out[<span class="number">3</span>]: <span class="string">'{"1": 2}'</span>
+
+In [<span class="number">4</span>]: json.loads(json.dumps(a))
+Out[<span class="number">4</span>]: {<span class="string">u'1'</span>: <span class="number">2</span>}
+</code></pre>
+<p>试了下，<strong>ValueError: Extra data: line 5 column 2 - line 5 column 8 (char 74 - 80)</strong>。嗯，意料之外，情理之外。先冷静一下，又看了下json的文档，没有太大的发现，又来盯着报错看。即<strong>line 5 column 2 - line 5 column 8</strong>，等等，第五行第二列到第五行第八列引起的报错，马萨卡，这里是薛定谔的空格么。<br>恍惚中想到了pprint，决定先打印出来看看，<strong>‘{\n  “h” : “haha”,\n  “hehe” : “hehe”,\n  “heiheihei” : “heiheihei”\n}\x06\x06\x06\x06\x06\x06’</strong>。幸运女神对我微笑，strip一波带走，总算扯完这个问题了，路上绕了不少，聊以此记。  </p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>自己在进行测试的时候，发现json.loads还是会报错，strip只针对了一种情况。这个就尴尬了，看来自己只是治标不治本。想到AES明文串有长度要求，即16的倍数，所以会有个自动填充的问题。默认情况下，会使用 PKCS5 的方法进行补白，方式就是将剩余的位数作为二进制的charcode填充直到对齐。也就是<strong>_pad</strong>这个方法，那对应的将这些留白删掉就可以了。自己之前未曾使用unpad模块，这里加上就大功告成了。 </p>
 
       
     </div>
@@ -404,14 +418,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/yield/" rel="tag"># yield</a>
-          
-            <a href="/tags/生成器/" rel="tag"># 生成器</a>
-          
-        </div>
-      
 
       
         
@@ -421,8 +427,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/04/Flask-Gunicorn-Nginx-部署/" rel="next" title="Flask + Gunicorn + Nginx 部署">
-                <i class="fa fa-chevron-left"></i> Flask + Gunicorn + Nginx 部署
+              <a href="/2018/01/03/subprocess模块中shell-True的阻塞问题/" rel="next" title="subprocess模块中shell=True的阻塞问题">
+                <i class="fa fa-chevron-left"></i> subprocess模块中shell=True的阻塞问题
               </a>
             
           </div>
@@ -430,10 +436,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/07/寻职所感/" rel="prev" title="寻职所感">
-                寻职所感 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -573,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#可迭代对象的机制-引用自《fluent-python》"><span class="nav-number">1.</span> <span class="nav-text">可迭代对象的机制(引用自《fluent python》)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可迭代对象和迭代器-引用自《fluent-python》"><span class="nav-number">2.</span> <span class="nav-text">可迭代对象和迭代器(引用自《fluent python》)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成器"><span class="nav-number">3.</span> <span class="nav-text">生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yield"><span class="nav-number">4.</span> <span class="nav-text">yield</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#categories-Python"><span class="nav-number">1.</span> <span class="nav-text">categories: Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的坑"><span class="nav-number">2.</span> <span class="nav-text">遇到的坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于JSON解析"><span class="nav-number">3.</span> <span class="nav-text">关于JSON解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
             
 
           </div>

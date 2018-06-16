@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://www.pipeapple.xyz/2017/03/04/Flask-Gunicorn-Nginx-部署/index.html">
 <meta property="og:site_name" content="Jblue">
 <meta property="og:description" content="翻阅了网上的一些资料之后，还是决定使用Flask＋Gunicorn＋Nginx 部署Django之类框架也是类似，不过功利地讲，还是Django招聘职位更多一些。">
-<meta property="og:updated_time" content="2017-06-11T04:39:19.000Z">
+<meta property="og:updated_time" content="2018-06-16T03:55:12.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flask + Gunicorn + Nginx 部署">
 <meta name="twitter:description" content="翻阅了网上的一些资料之后，还是决定使用Flask＋Gunicorn＋Nginx 部署Django之类框架也是类似，不过功利地讲，还是Django招聘职位更多一些。">
@@ -360,7 +360,10 @@
       
 
       
-        <p> 翻阅了网上的一些资料之后，还是决定使用Flask＋Gunicorn＋Nginx 部署Django之类框架也是类似，不过功利地讲，还是Django招聘职位更多一些。<br><a id="more"></a></p>
+        <blockquote>
+<p>翻阅了网上的一些资料之后，还是决定使用Flask＋Gunicorn＋Nginx 部署Django之类框架也是类似，不过功利地讲，还是Django招聘职位更多一些。</p>
+</blockquote>
+<a id="more"></a>
 <h2 id="初始准备"><a href="#初始准备" class="headerlink" title="初始准备"></a>初始准备</h2><p>代码托管于阿里云，选择的是Centos7，一来是为了尝鲜，二来Centos7使用的是Python2.7。如果选择6.5版本的话，yum需要处理下(原由Python2.6实现，需替换)。Flask,Nginx,Mysql等环境安装，网上教程很多，在此不做复述。</p>
 <h2 id="Gunicorn"><a href="#Gunicorn" class="headerlink" title="Gunicorn"></a>Gunicorn</h2><p>Gunicorn是一个Python WSGI UNIX的HTTP服务器。它既支持 eventlet，也支持greenlet。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo pip install gunicorn  <span class="comment"># 安装  </span></div><div class="line">gunicorn myproject:app  <span class="comment"># 启动</span></div></pre></td></tr></table></figure></p>
 <p>Gunicorn提供了许多命令行选项，见gunicorn -h。例如，用二个worker 进程（gunicorn -h）来运行一个Flask应用，绑定到localhost的4000端口:</p>

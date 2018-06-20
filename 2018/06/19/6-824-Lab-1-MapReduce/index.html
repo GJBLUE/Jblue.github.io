@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MIT,MapReduce," />
+  <meta name="keywords" content="MIT,MapReduce,分布式," />
 
 
 
@@ -91,13 +91,13 @@
 
 
 <meta name="description" content="MIT的课程，学习的原因有二，一是作为自己继续学习Go的道路；而是学习更多的知识，Raft、RPC这些自己之前都未曾有过接触，不能没吃过猪肉，也没见过猪跑。借此机会，学习吧。">
-<meta name="keywords" content="MIT,MapReduce">
+<meta name="keywords" content="MIT,MapReduce,分布式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="6.824 Lab 1: MapReduce">
 <meta property="og:url" content="http://www.pipeapple.xyz/2018/06/19/6-824-Lab-1-MapReduce/index.html">
 <meta property="og:site_name" content="Jblue">
 <meta property="og:description" content="MIT的课程，学习的原因有二，一是作为自己继续学习Go的道路；而是学习更多的知识，Raft、RPC这些自己之前都未曾有过接触，不能没吃过猪肉，也没见过猪跑。借此机会，学习吧。">
-<meta property="og:updated_time" content="2018-06-19T07:46:36.730Z">
+<meta property="og:updated_time" content="2018-06-20T02:28:47.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="6.824 Lab 1: MapReduce">
 <meta name="twitter:description" content="MIT的课程，学习的原因有二，一是作为自己继续学习Go的道路；而是学习更多的知识，Raft、RPC这些自己之前都未曾有过接触，不能没吃过猪肉，也没见过猪跑。借此机会，学习吧。">
@@ -372,7 +372,8 @@ Input3 -&gt; Map -&gt; a,1     c,1
                     |   |   -&gt; Reduce -&gt; c,2
                     |   -----&gt; Reduce -&gt; b,2
                     ---------&gt; Reduce -&gt; a,2
-</code></pre><h2 id="Part-1"><a href="#Part-1" class="headerlink" title="Part 1"></a>Part 1</h2>
+</code></pre><h2 id="Part-1-Map-Reduce-input-and-output"><a href="#Part-1-Map-Reduce-input-and-output" class="headerlink" title="Part 1  Map/Reduce input and output"></a>Part 1  Map/Reduce input and output</h2><p>part1的作业内容可以结合课程与代码中的注释，还是挺好理解的。</p>
+
       
     </div>
 
@@ -405,6 +406,8 @@ Input3 -&gt; Map -&gt; a,1     c,1
           
             <a href="/tags/MapReduce/" rel="tag"># MapReduce</a>
           
+            <a href="/tags/分布式/" rel="tag"># 分布式</a>
+          
         </div>
       
 
@@ -416,8 +419,8 @@ Input3 -&gt; Map -&gt; a,1     c,1
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/03/subprocess模块中shell-True的阻塞问题/" rel="next" title="subprocess模块中shell=True的阻塞问题">
-                <i class="fa fa-chevron-left"></i> subprocess模块中shell=True的阻塞问题
+              <a href="/2018/01/20/Redis被黑跑矿一览/" rel="next" title="Redis被黑跑矿一览">
+                <i class="fa fa-chevron-left"></i> Redis被黑跑矿一览
               </a>
             
           </div>
@@ -496,7 +499,7 @@ Input3 -&gt; Map -&gt; a,1     c,1
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -507,7 +510,7 @@ Input3 -&gt; Map -&gt; a,1     c,1
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -518,7 +521,7 @@ Input3 -&gt; Map -&gt; a,1     c,1
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -564,7 +567,7 @@ Input3 -&gt; Map -&gt; a,1     c,1
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于MapReduce"><span class="nav-number">1.</span> <span class="nav-text">关于MapReduce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-1"><span class="nav-number">2.</span> <span class="nav-text">Part 1</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于MapReduce"><span class="nav-number">1.</span> <span class="nav-text">关于MapReduce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-1-Map-Reduce-input-and-output"><span class="nav-number">2.</span> <span class="nav-text">Part 1  Map/Reduce input and output</span></a></li></ol></div>
             
 
           </div>

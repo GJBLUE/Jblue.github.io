@@ -411,6 +411,161 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.pipeapple.xyz/2018/01/20/Redis被黑跑矿一览/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="big_pineapple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oma8ea83e.bkt.clouddn.com/icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jblue">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/20/Redis被黑跑矿一览/" itemprop="url">Redis被黑跑矿一览</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T13:21:22+08:00">
+                2018-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>起因是Sentry上捕捉了一些错误，错误指向redis重的一些缓存数据不存在。当时就很奇怪，自己并未设置过期时间，数据居然就消失了。仔细研究了下，发现Redis里面多出了几个奇怪的数据，一个公钥，一个curl请求。不放心htop看了一下，<strong>/tmp/Circle_MI.png</strong>已经把cpu跑满了(四核跑满了三核)。  </p>
+</blockquote>
+<h2 id="定位一下"><a href="#定位一下" class="headerlink" title="定位一下"></a>定位一下</h2><p>找了一番，发现了应该就是被人植入跑矿程序了,<a href="http://bbs.qcloud.com/thread-30706-1-1.html" target="_blank" rel="external">问题就是这个了</a>。漏洞利用条件主要有三：  </p>
+<ol>
+<li>Redis服务以root账户运行；</li>
+<li>Redis无密码或弱密码进行认证；  </li>
+<li>Redis监听在0.0.0.0公网上；  </li>
+</ol>
+<p>执行<strong>netstat -alp |grep redis</strong>看了下，自己之前直接执行<strong>/usr/bin/redis-server</strong>, 没有指定配置文件，redis默认开到公网上了。修改/etc/redis/redis.conf，即:  </p>
+<pre><code class="shell">bind 127.0.0.1 # 绑定到本地
+port 123456 # 更换端口
+requirepass password # 可以选择舍不设置密码
+</code></pre>
+<p>运行：<strong>/usr/bin/redis-server /etc/redis/redis.conf</strong>, it’s over.  </p>
+<h2 id="一些注意点"><a href="#一些注意点" class="headerlink" title="一些注意点"></a>一些注意点</h2><ol>
+<li>查看crontab里面的任务，不熟悉的全删掉；</li>
+<li>查看用户有没有变多，自己这边redis不是以root起的，所以对方只拿到了当前用户权限；</li>
+<li>删除一些可疑的文件；</li>
+<li>关闭ssh密码登录，这个之前自己偷懒没关；</li>
+<li>重装大法好，以上；</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://www.pipeapple.xyz/2018/01/03/subprocess模块中shell-True的阻塞问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1522,151 +1677,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.pipeapple.xyz/2017/06/01/MongoDB安装踩坑记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="big_pineapple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://oma8ea83e.bkt.clouddn.com/icon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jblue">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/01/MongoDB安装踩坑记/" itemprop="url">MongoDB安装踩坑记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T21:50:19+08:00">
-                2017-06-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>最近在Ubuntu 16.04上安装MongoDB遇到了不少坑，这里做下整理。一开始是以为直接apt-get就可以安装了，然后找了份资料，但是14.04和16.04安装之间还是有所区别的。网上文档误导甚多，着实蛋疼。</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/01/MongoDB安装踩坑记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1711,7 +1726,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1722,7 +1737,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1733,7 +1748,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

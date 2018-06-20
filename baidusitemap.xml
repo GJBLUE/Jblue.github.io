@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://www.pipeapple.xyz/2018/01/20/Redis%E8%A2%AB%E9%BB%91%E8%B7%91%E7%9F%BF%E4%B8%80%E8%A7%88/</loc>
+    <lastmod>2018-06-20T05:25:05.978Z</lastmod>
+    <data>
+        <display>
+        <title>Redis被黑跑矿一览</title>
+        <pubTime>2018-01-20T05:21:22.000Z</pubTime>
+        
+        <tag>Redis</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="http://www.pipeapple.xyz/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.pipeapple.xyz/2018/06/19/6-824-Lab-1-MapReduce/</loc>
-    <lastmod>2018-06-19T07:46:36.730Z</lastmod>
+    <lastmod>2018-06-20T02:28:47.664Z</lastmod>
     <data>
         <display>
         <title>6.824 Lab 1: MapReduce</title>
@@ -14,6 +34,8 @@
         <tag>MIT</tag>
          
         <tag>MapReduce</tag>
+         
+        <tag>分布式</tag>
          
          
            

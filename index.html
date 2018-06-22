@@ -130,6 +130,7 @@
 
 
   <title></title>
+  <meta name="google-site-verification" content="ueBzgX5iqKI9XVahd45qFIrgHmz0SLbZqrb2o8IqDbY" />
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -209,16 +210,6 @@
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
           </a>
         </li>
       
@@ -500,31 +491,16 @@
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p>起因是Sentry上捕捉了一些错误，错误指向redis重的一些缓存数据不存在。当时就很奇怪，自己并未设置过期时间，数据居然就消失了。仔细研究了下，发现Redis里面多出了几个奇怪的数据，一个公钥，一个curl请求。不放心htop看了一下，<strong>/tmp/Circle_MI.png</strong>已经把cpu跑满了(四核跑满了三核)。  </p>
 </blockquote>
-<h2 id="定位一下"><a href="#定位一下" class="headerlink" title="定位一下"></a>定位一下</h2><p>找了一番，发现了应该就是被人植入跑矿程序了,<a href="http://bbs.qcloud.com/thread-30706-1-1.html" target="_blank" rel="external">问题就是这个了</a>。漏洞利用条件主要有三：  </p>
-<ol>
-<li>Redis服务以root账户运行；</li>
-<li>Redis无密码或弱密码进行认证；  </li>
-<li>Redis监听在0.0.0.0公网上；  </li>
-</ol>
-<p>执行<strong>netstat -alp |grep redis</strong>看了下，自己之前直接执行<strong>/usr/bin/redis-server</strong>, 没有指定配置文件，redis默认开到公网上了。修改/etc/redis/redis.conf，即:  </p>
-<pre><code class="shell">bind 127.0.0.1 # 绑定到本地
-port 123456 # 更换端口
-requirepass password # 可以选择舍不设置密码
-</code></pre>
-<p>运行：<strong>/usr/bin/redis-server /etc/redis/redis.conf</strong>, it’s over.  </p>
-<h2 id="一些注意点"><a href="#一些注意点" class="headerlink" title="一些注意点"></a>一些注意点</h2><ol>
-<li>查看crontab里面的任务，不熟悉的全删掉；</li>
-<li>查看用户有没有变多，自己这边redis不是以root起的，所以对方只拿到了当前用户权限；</li>
-<li>删除一些可疑的文件；</li>
-<li>关闭ssh密码登录，这个之前自己偷懒没关；</li>
-<li>重装大法好，以上；</li>
-</ol>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/20/Redis被黑跑矿一览/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1855,7 +1831,12 @@ requirepass password # 可以选择舍不设置密码
   
 
 
+  
 
+
+
+  
+  
 
 
 
@@ -1882,6 +1863,15 @@ requirepass password # 可以选择舍不设置密码
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
 
 
   

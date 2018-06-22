@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="起因是Sentry上捕捉了一些错误，错误指向redis重的一些缓存数据不存在。当时就很奇怪，自己并未设置过期时间，数据居然就消失了。仔细研究了下，发现Redis里面多出了几个奇怪的数据，一个公钥，一个curl请求。不放心htop看了一下，/tmp/Circle_MI.png已经把cpu跑满了(四核跑满了三核)。    定位一下找了一番，发现了应该就是被人植入跑矿程序了,问题就是这个了。漏洞利用条">
+<meta name="description" content="起因是Sentry上捕捉了一些错误，错误指向redis重的一些缓存数据不存在。当时就很奇怪，自己并未设置过期时间，数据居然就消失了。仔细研究了下，发现Redis里面多出了几个奇怪的数据，一个公钥，一个curl请求。不放心htop看了一下，/tmp/Circle_MI.png已经把cpu跑满了(四核跑满了三核)。">
 <meta name="keywords" content="Redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis被黑跑矿一览">
 <meta property="og:url" content="http://www.pipeapple.xyz/2018/01/20/Redis被黑跑矿一览/index.html">
 <meta property="og:site_name" content="Jblue">
-<meta property="og:description" content="起因是Sentry上捕捉了一些错误，错误指向redis重的一些缓存数据不存在。当时就很奇怪，自己并未设置过期时间，数据居然就消失了。仔细研究了下，发现Redis里面多出了几个奇怪的数据，一个公钥，一个curl请求。不放心htop看了一下，/tmp/Circle_MI.png已经把cpu跑满了(四核跑满了三核)。    定位一下找了一番，发现了应该就是被人植入跑矿程序了,问题就是这个了。漏洞利用条">
-<meta property="og:updated_time" content="2018-06-20T05:25:05.978Z">
+<meta property="og:description" content="起因是Sentry上捕捉了一些错误，错误指向redis重的一些缓存数据不存在。当时就很奇怪，自己并未设置过期时间，数据居然就消失了。仔细研究了下，发现Redis里面多出了几个奇怪的数据，一个公钥，一个curl请求。不放心htop看了一下，/tmp/Circle_MI.png已经把cpu跑满了(四核跑满了三核)。">
+<meta property="og:updated_time" content="2018-06-22T03:26:04.325Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis被黑跑矿一览">
-<meta name="twitter:description" content="起因是Sentry上捕捉了一些错误，错误指向redis重的一些缓存数据不存在。当时就很奇怪，自己并未设置过期时间，数据居然就消失了。仔细研究了下，发现Redis里面多出了几个奇怪的数据，一个公钥，一个curl请求。不放心htop看了一下，/tmp/Circle_MI.png已经把cpu跑满了(四核跑满了三核)。    定位一下找了一番，发现了应该就是被人植入跑矿程序了,问题就是这个了。漏洞利用条">
+<meta name="twitter:description" content="起因是Sentry上捕捉了一些错误，错误指向redis重的一些缓存数据不存在。当时就很奇怪，自己并未设置过期时间，数据居然就消失了。仔细研究了下，发现Redis里面多出了几个奇怪的数据，一个公钥，一个curl请求。不放心htop看了一下，/tmp/Circle_MI.png已经把cpu跑满了(四核跑满了三核)。">
 
 
 
@@ -135,6 +135,7 @@
 
 
   <title>Redis被黑跑矿一览 | Jblue</title>
+  <meta name="google-site-verification" content="ueBzgX5iqKI9XVahd45qFIrgHmz0SLbZqrb2o8IqDbY" />
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -212,16 +213,6 @@
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
           </a>
         </li>
       
@@ -363,6 +354,7 @@
         <blockquote>
 <p>起因是Sentry上捕捉了一些错误，错误指向redis重的一些缓存数据不存在。当时就很奇怪，自己并未设置过期时间，数据居然就消失了。仔细研究了下，发现Redis里面多出了几个奇怪的数据，一个公钥，一个curl请求。不放心htop看了一下，<strong>/tmp/Circle_MI.png</strong>已经把cpu跑满了(四核跑满了三核)。  </p>
 </blockquote>
+<a id="more"></a>  
 <h2 id="定位一下"><a href="#定位一下" class="headerlink" title="定位一下"></a>定位一下</h2><p>找了一番，发现了应该就是被人植入跑矿程序了,<a href="http://bbs.qcloud.com/thread-30706-1-1.html" target="_blank" rel="external">问题就是这个了</a>。漏洞利用条件主要有三：  </p>
 <ol>
 <li>Redis服务以root账户运行；</li>
@@ -653,7 +645,12 @@ requirepass password # 可以选择舍不设置密码
   
 
 
+  
 
+
+
+  
+  
 
 
 
@@ -680,6 +677,15 @@ requirepass password # 可以选择舍不设置密码
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
 
 
   

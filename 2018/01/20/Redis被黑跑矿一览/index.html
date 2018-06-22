@@ -89,6 +89,7 @@
 
 
 
+<meta name="google-site-verification" content="ueBzgX5iqKI9XVahd45qFIrgHmz0SLbZqrb2o8IqDbY" />
 
 <meta name="description" content="起因是Sentry上捕捉了一些错误，错误指向redis重的一些缓存数据不存在。当时就很奇怪，自己并未设置过期时间，数据居然就消失了。仔细研究了下，发现Redis里面多出了几个奇怪的数据，一个公钥，一个curl请求。不放心htop看了一下，/tmp/Circle_MI.png已经把cpu跑满了(四核跑满了三核)。">
 <meta name="keywords" content="Redis">
@@ -177,7 +178,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">Jblue's Blog</p>
+        <h1 class="site-subtitle" itemprop="description">Jblue's Blog</h1>
       
   </div>
 
@@ -282,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Redis被黑跑矿一览</h1>
+          <h2 class="post-title" itemprop="name headline">Redis被黑跑矿一览</h2>
         
 
         <div class="post-meta">
@@ -511,7 +512,7 @@ requirepass password # 可以选择舍不设置密码
           <p class="site-author-name" itemprop="name">big_pineapple</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
-          
+           
         </div>
         <nav class="site-state motion-element">
 
@@ -789,6 +790,21 @@ requirepass password # 可以选择舍不设置密码
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

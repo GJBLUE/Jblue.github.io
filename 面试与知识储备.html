@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MIT,MapReduce,分布式," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -91,17 +91,16 @@
 
 <meta name="google-site-verification" content="ueBzgX5iqKI9XVahd45qFIrgHmz0SLbZqrb2o8IqDbY" />
 
-<meta name="description" content="MIT的课程，学习的原因有二，一是作为自己继续学习Go的道路；而是学习更多的知识，Raft、RPC这些自己之前都未曾有过接触，不能没吃过猪肉，也没见过猪跑。借此机会，学习吧。">
-<meta name="keywords" content="MIT,MapReduce,分布式">
+<meta name="description" content="title: 面试与知识储备date: 2018-12-10 17:08:06 tags: 面试 写这篇文章缘由是看到一篇不错的文章,有些问题我答不上来，也有些问题我答不全，但这些问题大都很有趣。以下是自己给出的答案，用于查漏补缺，梳理自己一遍。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="6.824 Lab 1: MapReduce">
-<meta property="og:url" content="http://www.pipeapple.xyz/6-824-Lab-1-MapReduce.html">
+<meta property="og:title" content="Jblue">
+<meta property="og:url" content="http://www.pipeapple.xyz/面试与知识储备.html">
 <meta property="og:site_name" content="Jblue">
-<meta property="og:description" content="MIT的课程，学习的原因有二，一是作为自己继续学习Go的道路；而是学习更多的知识，Raft、RPC这些自己之前都未曾有过接触，不能没吃过猪肉，也没见过猪跑。借此机会，学习吧。">
-<meta property="og:updated_time" content="2018-06-20T02:28:47.664Z">
+<meta property="og:description" content="title: 面试与知识储备date: 2018-12-10 17:08:06 tags: 面试 写这篇文章缘由是看到一篇不错的文章,有些问题我答不上来，也有些问题我答不全，但这些问题大都很有趣。以下是自己给出的答案，用于查漏补缺，梳理自己一遍。">
+<meta property="og:updated_time" content="2018-12-11T03:59:47.792Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="6.824 Lab 1: MapReduce">
-<meta name="twitter:description" content="MIT的课程，学习的原因有二，一是作为自己继续学习Go的道路；而是学习更多的知识，Raft、RPC这些自己之前都未曾有过接触，不能没吃过猪肉，也没见过猪跑。借此机会，学习吧。">
+<meta name="twitter:title" content="Jblue">
+<meta name="twitter:description" content="title: 面试与知识储备date: 2018-12-10 17:08:06 tags: 面试 写这篇文章缘由是看到一篇不错的文章,有些问题我答不上来，也有些问题我答不全，但这些问题大都很有趣。以下是自己给出的答案，用于查漏补缺，梳理自己一遍。">
 
 
 
@@ -129,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://www.pipeapple.xyz/6-824-Lab-1-MapReduce.html"/>
+  <link rel="canonical" href="http://www.pipeapple.xyz/面试与知识储备.html"/>
 
 
 
 
 
-  <title>6.824 Lab 1: MapReduce | Jblue</title>
+  <title> | Jblue</title>
   <meta name="google-site-verification" content="ueBzgX5iqKI9XVahd45qFIrgHmz0SLbZqrb2o8IqDbY" />
 </head>
 
@@ -266,7 +265,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.pipeapple.xyz/6-824-Lab-1-MapReduce.html">
+    <link itemprop="mainEntityOfPage" href="http://www.pipeapple.xyz/面试与知识储备.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="big_pineapple">
@@ -283,7 +282,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">6.824 Lab 1: MapReduce</h2>
+          <h2 class="post-title" itemprop="name headline"></h2>
         
 
         <div class="post-meta">
@@ -295,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T15:22:21+08:00">
-                2018-06-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-10T17:08:06+08:00">
+                2018-12-10
               </time>
             
 
@@ -306,28 +305,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Go/" itemprop="url" rel="index">
-                    <span itemprop="name">Go</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -336,9 +313,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/6-824-Lab-1-MapReduce.html#comments" itemprop="discussionUrl">
+                <a href="/面试与知识储备.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="6-824-Lab-1-MapReduce.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="面试与知识储备.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -363,19 +340,27 @@
       
 
       
-        <blockquote>
-<p><a href="https://pdos.csail.mit.edu/6.824/schedule.html" target="_blank" rel="external">MIT</a>的课程，学习的原因有二，一是作为自己继续学习<a href="https://golang.org/doc/" target="_blank" rel="external">Go</a>的道路；而是学习更多的知识，<strong>Raft</strong>、<strong>RPC</strong>这些自己之前都未曾有过接触，不能没吃过猪肉，也没见过猪跑。借此机会，学习吧。</p>
+        <hr>
+<p>title: 面试与知识储备<br>date: 2018-12-10 17:08:06</p>
+<h2 id="tags-面试"><a href="#tags-面试" class="headerlink" title="tags: 面试"></a>tags: 面试</h2><blockquote>
+<p>写这篇文章缘由是看到一篇不错的<a href="https://github.com/monklof/Back-End-Developer-Interview-Questions#toc" target="_blank" rel="external">文章</a>,有些问题我答不上来，也有些问题我答不全，但这些问题大都很有趣。以下是自己给出的答案，用于查漏补缺，梳理自己一遍。  </p>
 </blockquote>
-<a id="more"></a> 
-<h2 id="关于MapReduce"><a href="#关于MapReduce" class="headerlink" title="关于MapReduce"></a>关于MapReduce</h2><p>MapReduce是Google提出的一个软件架构，用于大规模数据集（大于1TB）的并行运算。概念“Map（映射）”和“Reduce（归纳）”。课程里提供了Google的<a href="https://pdos.csail.mit.edu/6.824/papers/mapreduce.pdf" target="_blank" rel="external">文档</a>，我也找到了一份<a href="http://blog.bizcloudsoft.com/wp-content/uploads/Google-MapReduce%E4%B8%AD%E6%96%87%E7%89%88_1.0.pdf" target="_blank" rel="external">中文翻译</a>。<br>简单来讲就是分布式系统处理海量数据的一种方式，启动master进程分配任务给N个worker执行。Map和Reduce是两种不同的worker。Map函数读取被分配的输入数据片段，输出中间key/value pair值的集合，Reduce函数收集具有相同中间key值的value值，合并这些value值，形成一个较小的value值的集合。比较经典的例子就是课程当中的wordcount了。  </p>
-<pre><code>Input1 -&gt; Map -&gt; a,1 b,1 c,1
-Input2 -&gt; Map -&gt;     b,1
-Input3 -&gt; Map -&gt; a,1     c,1
-                    |   |   |
-                    |   |   -&gt; Reduce -&gt; c,2
-                    |   -----&gt; Reduce -&gt; b,2
-                    ---------&gt; Reduce -&gt; a,2
-</code></pre><h2 id="Part-1-Map-Reduce-input-and-output"><a href="#Part-1-Map-Reduce-input-and-output" class="headerlink" title="Part 1  Map/Reduce input and output"></a>Part 1  Map/Reduce input and output</h2><p>part1的作业内容可以结合课程与代码中的注释，还是挺好理解的。</p>
+<a id="more"></a>  
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li><a href="">通用问题</a>  </li>
+<li><a href="">开放式问题</a>  </li>
+</ul>
+<h3 id="通用问题"><a href="#通用问题" class="headerlink" title="通用问题"></a>通用问题</h3><ul>
+<li>Q：语言设计中空引用(<a href="https://softwareengineering.stackexchange.com/questions/12777/are-null-references-really-a-bad-thing" target="_blank" rel="external">null reference</a>)的存在有什么问题？假设你想要将空引用的概念从你的首选语言中移除，可能导致什么结果？<br>S: 对于Python来讲并没有什么问题，None本身就是一个Object。 None通常用于表示缺少值，因为默认参数未传递给函数。会导致调用时，无法判断参数是否存在的问题。  </li>
+<li>Q: 为什么打开TCP套接字有很大的开销？<br>S: 本身三次握手协议就带来了一定的开销，而socket是在应用层和传输层之间的一个抽象层，它把TCP/IP层复杂的操作抽象为几个简单的接口供应用层调用已实现进程在网络中通信。socket是”打开—读/写—关闭”模式的实现,其中开销比较大的是服务器socket接收到客户端socket请求，被动打开，开始接收客户端请求，直到客户端返回连接信息。这时候socket进入阻塞状态，所谓阻塞即accept()方法一直到客户端返回连接信息后才返回，开始接收下一个客户端请求。  </li>
+<li>Q：封装的重要性体现在哪儿？<br>S：封装是把过程和数据包围起来，对数据的访问只能通过已定义的界面。重要在于对内实现数据私有，对外实现方法调用，保证了数据的完整性和安全性。  </li>
+<li>Q：什么是实时系统？它与普通系统有什么区别？<br>S：wiki上有<a href="https://zh.wikipedia.org/wiki/%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F" target="_blank" rel="external">解释</a>,即实时操作系统与一般的操作系统相比，最大的特色就是其“实时性”[1]，也就是说，如果有一个任务需要执行，实时操作系统会马上（在较短时间内）执行该任务，不会有较长的延时。这种特性保证了各个任务的及时执行。  </li>
+<li>Q：实时语言(real-time language)和堆内存分配(heap memory allocation)之间的关系是什么？<br>S：<a href="https://www.encyclopedia.com/computing/dictionaries-thesauruses-pictures-and-press-releases/real-time-language" target="_blank" rel="external">实时语言</a>还是第一次听说，Ada，Modula，CORAL 66和RTL-2是不同程度的实时语言。<a href="https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D" target="_blank" rel="external">堆内存分配</a>是指计算机程序在运行期中分配使用内存。它可以当成是一种分配有限内存资源所有权的方法。两者之间还挺矛盾的，因为堆内存使用一般比较慢，堆分配的效率与分配算法的优劣关系很大。  </li>
+<li>Q：不变性(Immutability)是指: (变量的)值只能在创建的时候被设置一次，之后就不能被改变。为什么不变性对写更加安全的代码有帮助？<br>S: 在并发时就很有帮助，不需要担心被改变。  </li>
+<li>Q：什么是O/R阻抗失衡(Object-Relational impedence mismatch)？<br>S：在用Django的ORM时有时候就会遇到这个问题，但时间太远无法吐出那种泥泞感。这里有篇<a href="https://blog.csdn.net/nszkadrgg/article/details/8471679" target="_blank" rel="external">文章</a>写到“O/R阻抗失衡(O/R Impedance Mismatch)”，指的是OO对象模型和关系型数据库的数据结构之间的，设计理念上的差异。OO的设计理念，是以最正确的语义来描述真实世界；而关系型数据库的设计理念，则是从数学的角度，如何更有效的存储和管理数据。大概就是这个意思了。  </li>
+<li>Q：TCP和HTTP有什么区别？<br>S：tcp工作在传输层，http工作在应用层；<br>http是建立在tcp可靠连接之上的应用层协议；  </li>
+<li>Q：如何在一个不可靠的协议之上构建一个可靠的通信协议？<br>S：刚知道了Google的<a href="https://zhuanlan.zhihu.com/p/32553477" target="_blank" rel="external">quic协议</a>，重写ack。   </li>
+</ul>
 
       
     </div>
@@ -403,16 +388,6 @@ Input3 -&gt; Map -&gt; a,1     c,1
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/MIT/" rel="tag"># MIT</a>
-          
-            <a href="/tags/MapReduce/" rel="tag"># MapReduce</a>
-          
-            <a href="/tags/分布式/" rel="tag"># 分布式</a>
-          
-        </div>
-      
 
       
         
@@ -422,8 +397,8 @@ Input3 -&gt; Map -&gt; a,1     c,1
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Django-1-11-4-中间件编写.html" rel="next" title="Django 1.11.4 中间件编写">
-                <i class="fa fa-chevron-left"></i> Django 1.11.4 中间件编写
+              <a href="/2-3.html" rel="next" title="2&3">
+                <i class="fa fa-chevron-left"></i> 2&3
               </a>
             
           </div>
@@ -431,10 +406,6 @@ Input3 -&gt; Map -&gt; a,1     c,1
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2-3.html" rel="prev" title="2&3">
-                2&3 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -581,7 +552,7 @@ Input3 -&gt; Map -&gt; a,1     c,1
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于MapReduce"><span class="nav-number">1.</span> <span class="nav-text">关于MapReduce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-1-Map-Reduce-input-and-output"><span class="nav-number">2.</span> <span class="nav-text">Part 1  Map/Reduce input and output</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-面试"><span class="nav-number">1.</span> <span class="nav-text">tags: 面试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number"></span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通用问题"><span class="nav-number">0.1.</span> <span class="nav-text">通用问题</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -738,9 +709,9 @@ Input3 -&gt; Map -&gt; a,1     c,1
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.pipeapple.xyz/6-824-Lab-1-MapReduce.html';
-          this.page.identifier = '6-824-Lab-1-MapReduce.html';
-          this.page.title = '6.824 Lab 1: MapReduce';
+          this.page.url = 'http://www.pipeapple.xyz/面试与知识储备.html';
+          this.page.identifier = '面试与知识储备.html';
+          this.page.title = '';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://jblue.disqus.com/embed.js';

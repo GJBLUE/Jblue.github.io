@@ -263,6 +263,194 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.pipeapple.xyz/mac下配置aria2.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="big_pineapple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oma8ea83e.bkt.clouddn.com/icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jblue">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/mac下配置aria2.html" itemprop="url">未命名</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-24T11:33:13+08:00">
+                2019-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/mac下配置aria2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="mac下配置aria2.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>title: mac下配置aria2<br>date: 2019-03-24 11:33:13<br>tags: aria2  </p>
+<h2 id="categories-mac"><a href="#categories-mac" class="headerlink" title="categories: mac"></a>categories: mac</h2><blockquote>
+<p>缘起于《yes minister》，迅雷老是下到一半就停住了或者干脆一开始就不让你下载。折腾一下aria2吧，以后全靠它了  </p>
+</blockquote>
+<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><p>直接用Homebrew装，方便快捷  </p>
+<pre><code class="shell">brew install aria2
+</code></pre>
+<p>aria2 提供两种方式使用，一种是直接命令行模式下载，另外一种 RPC 模式，RPC 启动之后只会安静的等待下载请求，下载完成后也只会安静的驻留后台不会自动退出。而使用 RPC 模式推荐做一个配置文件方便使用，这里需要//替换为#。   </p>
+<pre><code class="shell">//用户名
+//rpc-user=user
+//密码
+//rpc-passwd=passwd
+//上面的认证方式不建议使用,建议使用下面的token方式
+//设置加密的密钥
+//rpc-secret=token
+//允许rpc
+enable-rpc=true
+//允许所有来源, web界面跨域权限需要
+rpc-allow-origin-all=true
+//允许外部访问，false的话只监听本地端口
+rpc-listen-all=true
+//RPC端口, 仅当默认端口被占用时修改
+//rpc-listen-port=6800
+//最大同时下载数(任务数), 路由建议值: 3
+max-concurrent-downloads=5
+//断点续传
+continue=true
+//同服务器连接数
+max-connection-per-server=5
+//最小文件分片大小, 下载线程数上限取决于能分出多少片, 对于小文件重要
+min-split-size=10M
+//单文件最大线程数, 路由建议值: 5
+split=10
+//下载速度限制
+max-overall-download-limit=0
+//单文件速度限制
+max-download-limit=0
+//上传速度限制
+max-overall-upload-limit=0
+//单文件速度限制
+max-upload-limit=0
+//断开速度过慢的连接
+//lowest-speed-limit=0
+//验证用，需要1.16.1之后的release版本
+//referer=*
+//文件保存路径, 默认为当前启动位置
+dir=/Users/xxx/Downloads
+//文件缓存, 使用内置的文件缓存, 如果你不相信Linux内核文件缓存和磁盘内置缓存时使用, 需要1.16及以上版本
+//disk-cache=0
+//另一种Linux文件缓存方式, 使用前确保您使用的内核支持此选项, 需要1.15及以上版本(?)
+//enable-mmap=true
+//文件预分配, 能有效降低文件碎片, 提高磁盘性能. 缺点是预分配时间较长
+//所需时间 none &lt; falloc ? trunc « prealloc, falloc和trunc需要文件系统和内核支持
+file-allocation=prealloc  
+// 开启 BT 下列设置
+enable-dht=true
+bt-enable-lpd=true
+enable-peer-exchange=true
+// 在最后添加 BT trackers, 配置列表时重新获取 最新 trackers，tracker 中用，隔开
+bt-tracker=udp://62.138.0.158:6969/announce,udp://87.233.192.220:6969/announce,udp://111.6.78.96:6969/announce,udp://90.179.64.91:1337/announce,udp://51.15.4.13:1337/announce,udp://151.80.120.113:2710/announce,udp://191.96.249.23:6969/announce,udp://35.187.36.248:1337/announce,udp://123.249.16.65:2710/announce,udp://210.244.71.25:6969/announce,udp://78.142.19.42:1337/announce,udp://173.254.219.72:6969/announce,udp://51.15.76.199:6969/announce,udp://51.15.40.114:80/announce,udp://91.212.150.191:3418/announce,udp://103.224.212.222:6969/announce,udp://5.79.83.194:6969/announce,udp://92.241.171.245:6969/announce,udp://5.79.209.57:6969/announce,udp://82.118.242.198:1337/announce
+</code></pre>
+<p> 默认下载路径的 /Users/xxx/Downloads 可以改为任何你想要的绝对路径。这个配置文件也放在你需要放的地方，启动即可。  </p>
+<pre><code class="shell">aria2c --conf-path="/Users/xxx/aria2.conf" -D
+</code></pre>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>找到一个web前端<a href="https://ziahamza.github.io/webui-aria2/" target="_blank" rel="external">webui-aria2</a>，还有一个插件<a href="https://chrome.google.com/webstore/detail/camtd-aria2-download-mana/lcfobgbcebdnnppciffalfndpdfeence?utm_source=chrome-ntp-icon" target="_blank" rel="external">Camtd - Aria2下载管理器</a>。关于BT下载慢的话可以看<a href="http://www.senra.me/solutions-to-aria2-bt-metalink-download-slowly/" target="_blank" rel="external">这个</a>  </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://www.pipeapple.xyz/面试与知识储备.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1613,157 +1801,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.pipeapple.xyz/《fluent-python》读书笔记.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="big_pineapple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://oma8ea83e.bkt.clouddn.com/icon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jblue">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/《fluent-python》读书笔记.html" itemprop="url">《fluent python》读书笔记</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-09T16:52:52+08:00">
-                2017-07-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/《fluent-python》读书笔记.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="《fluent-python》读书笔记.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>《fluent python》是本好书，本书中提到了不少东西，都是自己之前忽视或者说只知其然。自己在阅读的时候经常有种“哇”的感觉，在此撂作一点积累，毕竟现在还是偷了的知识，算不得自己，且走且行。  </p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/《fluent-python》读书笔记.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1813,7 +1850,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1888,7 +1925,7 @@
         <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -91,17 +91,17 @@
 
 <meta name="google-site-verification" content="ueBzgX5iqKI9XVahd45qFIrgHmz0SLbZqrb2o8IqDbY" />
 
-<meta name="description" content="写这篇文章缘由是看到一篇不错的文章,有些问题我答不上来，也有些问题我答不全，但这些问题大都很有趣。以下是自己给出的答案，用于查漏补缺，梳理自己一遍。">
+<meta name="description" content="写这篇文章缘由是看到一篇不错的文章和面试知识点梳理,又到了开始找工作的日子了，加油吧。">
 <meta name="keywords" content="面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试与知识储备">
 <meta property="og:url" content="http://www.pipeapple.xyz/面试与知识储备.html">
 <meta property="og:site_name" content="Jblue">
-<meta property="og:description" content="写这篇文章缘由是看到一篇不错的文章,有些问题我答不上来，也有些问题我答不全，但这些问题大都很有趣。以下是自己给出的答案，用于查漏补缺，梳理自己一遍。">
-<meta property="og:updated_time" content="2018-12-12T03:33:04.633Z">
+<meta property="og:description" content="写这篇文章缘由是看到一篇不错的文章和面试知识点梳理,又到了开始找工作的日子了，加油吧。">
+<meta property="og:updated_time" content="2019-03-24T11:02:32.656Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试与知识储备">
-<meta name="twitter:description" content="写这篇文章缘由是看到一篇不错的文章,有些问题我答不上来，也有些问题我答不全，但这些问题大都很有趣。以下是自己给出的答案，用于查漏补缺，梳理自己一遍。">
+<meta name="twitter:description" content="写这篇文章缘由是看到一篇不错的文章和面试知识点梳理,又到了开始找工作的日子了，加油吧。">
 
 
 
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-10T17:08:06+08:00">
-                2018-12-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-10T17:08:06+08:00">
+                2019-03-10
               </time>
             
 
@@ -364,13 +364,126 @@
 
       
         <blockquote>
-<p>写这篇文章缘由是看到一篇不错的<a href="https://github.com/monklof/Back-End-Developer-Interview-Questions#toc" target="_blank" rel="external">文章</a>,有些问题我答不上来，也有些问题我答不全，但这些问题大都很有趣。以下是自己给出的答案，用于查漏补缺，梳理自己一遍。  </p>
+<p>写这篇文章缘由是看到一篇不错的<a href="https://github.com/monklof/Back-End-Developer-Interview-Questions#toc" target="_blank" rel="external">文章</a>和<a href="https://github.com/CyC2018/Backend-Interview-Guide/blob/master/doc/%E4%B8%80%E6%96%87%E5%B8%AE%E4%BD%A0%E7%90%86%E6%B8%85%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9.md" target="_blank" rel="external">面试知识点梳理</a>,又到了开始找工作的日子了，加油吧。  </p>
 </blockquote>
 <a id="more"></a>  
 <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li><a href="">操作系统</a> </li>
+<li><a href="">Linux</a> </li>
+<li><a href="">网络</a>  </li>
+<li><a href="">数据库</a>  </li>
+<li><a href="">MySQL </a>  </li>
+<li><a href="">Redis</a>  </li>
 <li><a href="">通用问题</a>  </li>
 <li><a href="">设计模式相关问题</a>  </li>
 </ul>
+<h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><ol>
+<li><p>进程与线程的本质区别、以及各自的使用场景。  </p>
+<p> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.md#%E4%BA%8C%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86" target="_blank" rel="external">参考</a>.<br> 进程是资源分配的基本单位，线程是独立调度的基本单位，一个进程中可以有多个线程，它们共享进程资源。    </p>
+</li>
+<li><p>进程状态。<br>只有就绪态和运行态可以相互转换，其它的都是单向转换。就绪状态的进程通过调度算法从而获得 CPU 时间，转为运行状态；而运行状态的进程，在分配给它的 CPU 时间片用完之后就会转为就绪状态，等待下一次调度。<br>阻塞状态是缺少需要的资源从而由运行状态转换而来，但是该资源不包括 CPU 时间，缺少 CPU 时间会从运行态转换为就绪态。<br> 就绪状态（ready）：等待被调度；<br> 运行状态（running）；<br> 阻塞状态（waiting）：等待资源；  </p>
+</li>
+<li><p>进程调度算法的特点以及使用场景。<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.md#%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95" target="_blank" rel="external">参考</a>  </p>
+</li>
+<li><p>线程实现的方式。<br> import threading  </p>
+</li>
+<li><p>协程的作用。<br> <a href="https://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/0013868328689835ecd883d910145dfa8227b539725e5ed000" target="_blank" rel="external">参考</a><br> 最大的优势就是协程极高的执行效率。因为子程序切换不是线程切换，而是由程序自身控制，因此，没有线程切换的开销，和多线程比，线程数量越多，协程的性能优势就越明显。<br> 第二大优势就是不需要多线程的锁机制，因为只有一个线程，也不存在同时写变量冲突，在协程中控制共享资源不加锁，只需要判断状态就好了，所以执行效率比多线程高很多。  </p>
+</li>
+<li><p>常见进程同步问题。<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.md#%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5" target="_blank" rel="external">reference</a>  </p>
+</li>
+<li><p>进程通信方法的特点以及使用场景。<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.md#%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1" target="_blank" rel="external">reference</a>  </p>
+</li>
+<li><p>死锁必要条件、解决死锁策略，能写出和分析死锁的代码，能说明在数据库管理系统或者Python中如何解决死锁。<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.md#%E4%B8%89%E6%AD%BB%E9%94%81" target="_blank" rel="external">refernce</a><br> 数据库解决死锁<a href="https://blog.csdn.net/dhfzhishi/article/details/80072150" target="_blank" rel="external">reference</a><br> Python中如何解决死锁:可以增加超时时间，时间过了强行解锁, or <a href="https://python3-cookbook.readthedocs.io/zh_CN/latest/c12/p05_locking_with_deadlock_avoidance.html" target="_blank" rel="external">reference</a></p>
+</li>
+<li><p>虚拟内存的作用，分页系统实现虚拟内存原理。<br>虚拟内存的目的是为了让物理内存扩充成更大的逻辑内存，从而让程序获得更多的可用内存。 <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.md#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98" target="_blank" rel="external">reference</a><br>操作系统将内存抽象成地址空间,内存管理单元（MMU）管理着地址空间和物理内存的转换，其中的页表（Page table）存储着页（程序地址空间）和页框（物理内存空间）的映射表。</p>
+</li>
+<li><p>页面置换算法的原理，特别是 LRU 的实现原理，最好能手写，再说明它在 Redis 等作为缓存置换算法。  </p>
+<p>在程序运行过程中，如果要访问的页面不在内存中，就发生缺页中断从而将该页调入内存中。此时如果内存已无空闲空间，系统必须从内存中调出一个页面到磁盘对换区中来腾出空间。<a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.md#%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95" target="_blank" rel="external">reference</a><br>Python写LRU<a href="https://juejin.im/post/5a9e6835f265da23937697ea" target="_blank" rel="external">reference</a><br>redis的<a href="http://blog.jobbole.com/107084/" target="_blank" rel="external">reference</a>  </p>
+</li>
+<li><p>比较分页与分段的区别。<br><a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.md#%E5%88%86%E9%A1%B5%E4%B8%8E%E5%88%86%E6%AE%B5%E7%9A%84%E6%AF%94%E8%BE%83" target="_blank" rel="external">reference</a></p>
+</li>
+<li><p>分析静态链接的不足，以及动态链接的特点。<br><a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.md#%E5%85%AD%E9%93%BE%E6%8E%A5" target="_blank" rel="external">reference</a>， Python上我是没用过这些。  </p>
+<p>静态链接器以一组可重定向目标文件为输入，生成一个完全链接的可执行目标文件作为输出。  </p>
+</li>
+</ol>
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><ol>
+<li><p>文件系统的原理，特别是 inode 和 block。数据恢复原理。<br> 对分区进行格式化是为了在分区上建立文件系统。一个分区通常只能格式化为一个文件系统，但是磁盘阵列等技术可以将一个分区格式化为多个文件系统。<br> inode：一个文件占用一个 inode，记录文件的属性，同时记录此文件的内容所在的 block 编号；<br> block：记录文件的内容，文件太大时，会占用多个 block。<br> 数据恢复原理：删除的数据并没有被删除，只是标记为此处空闲  </p>
+</li>
+<li><p>硬链接与软链接的区别。<br> <a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html" target="_blank" rel="external">reference</a>.<br> 硬链接就是同一个文件使用了多个别名, 硬链接可由命令 link 或 ln 创建。<br> 软链接是文件用户数据块中存放的内容是另一文件的路径名的指向，本质上就是一个普通文件，只是数据块内容有点特殊。</p>
+</li>
+<li><p>僵尸进程与孤儿进程的区别，从 SIGCHLD 分析产生僵尸进程的原因。<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Linux.md#%E5%AD%A4%E5%84%BF%E8%BF%9B%E7%A8%8B" target="_blank" rel="external">孤儿进程</a>; <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Linux.md#%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B" target="_blank" rel="external">僵尸进程</a>; <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Linux.md#sigchld" target="_blank" rel="external">SIGCHLD</a>  </p>
+</li>
+</ol>
+<h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><ol>
+<li><p>各层协议的作用，以及 TCP/IP 协议的特点。<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.md#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84" target="_blank" rel="external">各协议作用</a>;  TCP/IP 协议的特点应该是不受限于系统和硬件吧，本身相当于是个<a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.md#3-tcpip" target="_blank" rel="external">四层协议</a>  </p>
+</li>
+<li><p>UDP 与 TCP 比较，分析上层协议应该使用 UDP 还是 TCP。<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.md#udp-%E5%92%8C-tcp-%E7%9A%84%E7%89%B9%E7%82%B9" target="_blank" rel="external">UDP 和 TCP 的特点</a>; </p>
+</li>
+<li><p>理解三次握手以及四次挥手具体过程，三次握手的原因、四次挥手原因、TIME_WAIT 的作用。<br><a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.md#tcp-%E7%9A%84%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B" target="_blank" rel="external">TCP三次握手</a>,第三次握手是为了防止失效的连接请求到达服务器，让服务器错误打开连接。<br><a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.md#tcp-%E7%9A%84%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B" target="_blank" rel="external">TCP四次挥手</a>,客户端发送了 FIN 连接释放报文之后，服务器收到了这个报文，就进入了 CLOSE-WAIT 状态。这个状态是为了让服务器端发送还未传送完毕的数据，传送完毕之后，服务器会发送 FIN 连接释放报文。<br>TIME_WAIT是客户端接收到服务器端的 FIN 报文后进入此状态，此时并不是直接进入 CLOSED 状态，还需要等待一个时间计时器设置的时间 2MSL。</p>
+</li>
+<li><p>可靠传输原理，并设计可靠 UDP 协议。<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.md#tcp-%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93" target="_blank" rel="external">reference</a>,TCP 使用超时重传来实现可靠传输：如果一个已经发送的报文段在超时时间内没有收到确认，那么就重传这个报文段。<br> <a href="https://www.infoq.cn/article/how-to-make-udp-reliable" target="_blank" rel="external">可靠的UDP</a>  </p>
+</li>
+<li><p>DNS 的端口号；TCP 还是 UDP；作为缓存、负载均衡。<br> DNS 是一个分布式数据库，提供了主机名和 IP 地址之间相互转换的服务。这里的分布式数据库是指，每个站点只保留它自己的那部分数据。<br> DNS 可以使用 UDP 或者 TCP 进行传输，使用的端口号都为 53，大多数情况下 DNS 使用 UDP 进行传输。  </p>
+</li>
+<li><p>GET 与 POST 比较：作用、参数、安全性、幂等性、可缓存。<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/HTTP.md#%E4%B9%9Dget-%E5%92%8C-post-%E6%AF%94%E8%BE%83" target="_blank" rel="external">reference</a>  </p>
+</li>
+<li><p>Cookie 作用、安全性问题、和 Session 的比较。<br> Cookie 是服务器发送到用户浏览器并保存在本地的一小块数据，它会在浏览器之后向同一服务器再次发起请求时被携带上，用于告知服务端两个请求是否来自同一浏览器。<br> Session 可以存储在服务器上的文件、数据库或者内存中。也可以将 Session 存储在 Redis 这种内存型数据库中，效率会更高。  </p>
+</li>
+<li><p>长连接与短连接原理以及使用场景，流水线。<br> 短连接是指SOCKET连接后，发送接收完数据后马上断开连接。长连接只需要建立一次 TCP 连接就能进行多次 HTTP 通信。流水线是在同一条长连接上发出连续的请求，而不用等待响应返回，这样可以避免连接延迟。  </p>
+</li>
+<li><p>HTTP 存在的安全性问题，以及 HTTPs 的加密、认证和完整性保护作用。<br> 缺点：被窃听，被伪装，被篡改。<br> HTTPS是让 HTTP 先和 SSL（Secure Sockets Layer）通信，再由 SSL 和 TCP 通信，也就是说 HTTPS 使用了隧道进行通信。<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/HTTP.md#%E5%8A%A0%E5%AF%86" target="_blank" rel="external">加密</a>;<a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/HTTP.md#%E8%AE%A4%E8%AF%81" target="_blank" rel="external">认证</a>;<a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/HTTP.md#%E5%AE%8C%E6%95%B4%E6%80%A7%E4%BF%9D%E6%8A%A4" target="_blank" rel="external">完整性保护</a>  </p>
+</li>
+<li><p>HTTP/1.1 的特性<br><a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/HTTP.md#%E5%85%ABhttp11-%E6%96%B0%E7%89%B9%E6%80%A7" target="_blank" rel="external">reference</a>  </p>
+</li>
+<li><p>HTTP/1.x 的缺陷，以及 HTTP/2 的特点。<br><a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/HTTP.md#http1x-%E7%BC%BA%E9%99%B7" target="_blank" rel="external">缺陷</a>,HTTP/2 的特点:二进制分帧层;服务端推送;首部压缩</p>
+</li>
+<li><p>五种 IO 模型的特点以及比较。<br><a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Socket.md#%E4%B8%80io-%E6%A8%A1%E5%9E%8B" target="_blank" rel="external">reference</a>:阻塞式 I/O;非阻塞式 I/O;I/O 复用(select 和 poll);信号驱动式 I/O(SIGIO);异步 I/O(AIO)</p>
+</li>
+<li><p>select、poll、epoll 的原理、比较、以及使用场景；epoll 的水平触发与边缘触发。<br><a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Socket.md#%E4%BA%8Cio-%E5%A4%8D%E7%94%A8" target="_blank" rel="external">reference</a>  </p>
+</li>
+</ol>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><ol>
+<li><p>连接查询与子查询的比较。<br> 子查询中只能返回一个字段的数据，可以将子查询的结果作为 WHRER 语句的过滤条件：<br> 连接可以替换子查询，并且比子查询的效率一般会更快。  </p>
+</li>
+<li><p>视图的作用，以及何时能更新视图。<br> 视图是虚拟的表，本身不包含数据，也就不能对其进行索引操作。  </p>
+</li>
+<li><p>ACID 的作用以及实现原理<br> <strong>原子性（Atomicity）</strong>：事务被视为不可分割的最小单元，事务的所有操作要么全部提交成功，要么全部失败回滚。<br> <strong>一致性（Consistency）</strong>: 数据库在事务执行前后都保持一致性状态。在一致性状态下，所有事务对一个数据的读取结果都是相同的。<br> <strong>隔离性（Isolation）</strong>: 一个事务所做的修改在最终提交以前，对其它事务是不可见的。<br> <strong>持久性（Durability）</strong>：一旦事务提交，则其所做的修改将会永远保存到数据库中。即使系统发生崩溃，事务执行的结果也不能丢失。  </p>
+</li>
+<li><p>四大隔离级别，以及不可重复读和幻影读的出现原因。<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md#%E5%9B%9B%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB" target="_blank" rel="external">reference</a><br> 不可重复读: T2 读取一个数据，T1 对该数据做了修改。如果 T2 再次读取这个数据，此时读取的结果和第一次读取的结果不同。<br> 幻影读: T1 读取某个范围的数据，T2 在这个范围内插入新的数据，T1 再次读取这个范围的数据，此时读取的结果和和第一次读取的结果不同。  </p>
+</li>
+<li><p>乐观锁与悲观锁<br>乐观锁（ Optimistic Locking ） 相对悲观锁而言，乐观锁假设认为数据一般情况下不会造成冲突，所以在数据进行提交更新的时候，才会正式对数据的冲突与否进行检测，如果发现冲突了，则让返回用户错误的信息，让用户决定如何去做。<br>相对于悲观锁，在对数据库进行处理的时候，乐观锁并不会使用数据库提供的锁机制。一般的实现乐观锁的方式就是记录数据版本。<br>悲观锁，正如其名，它指的是对数据被外界（包括本系统当前的其他事务，以及来自外部系统的事务处理）修改持保守态度(悲观)，因此，在整个数据处理过程中，将数据处于锁定状态。 悲观锁的实现，往往依靠数据库提供的锁机制 （也只有数据库层提供的锁机制才能真正保证数据访问的排他性，否则，即使在本系统中实现了加锁机制，也无法保证外部系统不会修改数据）</p>
+</li>
+<li><p>MVCC 原理，当前读以及快照读，Next-Key Locks 解决幻影读。<br> 多版本并发控制是 MySQL 的 InnoDB 存储引擎实现隔离级别的一种具体方式，用于实现提交读和可重复读这两种隔离级别。<a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md#%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B" target="_blank" rel="external">原理</a><br> <strong>快照读</strong>： 使用 MVCC 读取的是快照中的数据，这样可以减少加锁所带来的开销。<br> <strong>当前读</strong>： 读取的是最新的数据，需要加锁。以下第一个语句需要加 S 锁，其它都需要加 X 锁。<br> <strong>Next-Key Locks</strong>: 它是 Record Locks 和 Gap Locks 的结合，不仅锁定一个记录上的索引，也锁定索引之间的间隙。  </p>
+</li>
+<li><p>SQL 与 NoSQL 的比较<br><strong>SQL</strong>: 遵循ACID原则<br><strong>NoSQL</strong>: 遵循CAP原则：分布式系统只能满足此三项中的两项而不可能满足全部三项;<strong>C</strong>:一致性（Consistency)（所有节点在同一时间具有相同的数据）; <strong>P</strong>: 可用性（Availability）（保证每个请求不管成功或者失败都有响应）; <strong>P</strong>: 分区容忍性（Partition tolerance）（系统中任意信息的丢失或失败不会影响系统的继续运作）.  </p>
+</li>
+</ol>
+<h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><ol>
+<li><p>B+ Tree 原理，与其它查找树的比较。<br> B Tree 指的是 Balance Tree，也就是平衡树。平衡树是一颗查找树，并且所有叶子节点位于同一层。<br> B+ Tree 是基于 B Tree 和叶子节点顺序访问指针进行实现，它具有 B Tree 的平衡性，并且通过顺序访问指针来提高区间查询的性能。  </p>
+</li>
+<li><p>MySQL 索引以及优化。<br> <strong>B+Tree 索引</strong>： InnoDB 的 B+Tree 索引分为主索引和辅助索引。主索引的叶子节点 data 域记录着完整的数据记录，这种索引方式被称为聚簇索引。辅助索引的叶子节点的 data 域记录着主键的值，因此在使用辅助索引进行查找时，需要先查找到主键值，然后再到主索引中进行查找。<br> <strong>哈希索引</strong>：哈希索引能以 O(1) 时间进行查找，但是失去了有序性：即无法用于排序与分组；只支持精确查找，无法用于部分查找和范围查找。<br> <strong>全文索引</strong>： MyISAM 存储引擎支持全文索引，用于查找文本中的关键词，而不是直接比较是否相等。<br> <strong>空间数据索引</strong>： MyISAM 存储引擎支持空间数据索引（R-Tree），可以用于地理数据存储。<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/MySQL.md#%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96" target="_blank" rel="external">优化</a>  </p>
+</li>
+<li><p>查询优化<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/MySQL.md#%E4%BA%8C%E6%9F%A5%E8%AF%A2%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96" target="_blank" rel="external">reference</a>  </p>
+</li>
+<li><p>InnoDB 与 MyISAM 比较<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/MySQL.md#%E4%B8%89%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E" target="_blank" rel="external">reference</a>  </p>
+</li>
+</ol>
+<h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><ol>
+<li><p>字典和跳跃表原理分析<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Redis.md#%E5%AD%97%E5%85%B8" target="_blank" rel="external">reference</a>  </p>
+</li>
+<li><p>使用场景<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Redis.md#%E5%9B%9B%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF" target="_blank" rel="external">reference</a>  </p>
+</li>
+<li><p>与 Memchached 的比较<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Redis.md#%E4%BA%94redis-%E4%B8%8E-memcached" target="_blank" rel="external">reference</a>  </p>
+</li>
+<li><p>RDB 和 AOF 持久化机制<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Redis.md#%E4%BA%94redis-%E4%B8%8E-memcached" target="_blank" rel="external">reference</a>  </p>
+</li>
+<li><p>事件驱动模型<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Redis.md#%E5%8D%81%E4%BA%8B%E4%BB%B6" target="_blank" rel="external">reference</a>    </p>
+</li>
+<li><p>事务原理<br> 一个事务包含了多个命令，服务器在执行事务期间，不会改去执行其它客户端的命令请求。事务中的多个命令被一次性发送给服务器，而不是一条一条发送，这种方式被称为流水线，它可以减少客户端与服务器之间的网络通信次数从而提升性能。  </p>
+</li>
+<li><p>集群与分布式<br> <a href="https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E9%9B%86%E7%BE%A4.md" target="_blank" rel="external">集群</a>;<a href="">分布式</a></p>
+</li>
+</ol>
 <h3 id="通用问题"><a href="#通用问题" class="headerlink" title="通用问题"></a>通用问题</h3><ul>
 <li>Q：语言设计中空引用(<a href="https://softwareengineering.stackexchange.com/questions/12777/are-null-references-really-a-bad-thing" target="_blank" rel="external">null reference</a>)的存在有什么问题？假设你想要将空引用的概念从你的首选语言中移除，可能导致什么结果？<br>S: 对于Python来讲并没有什么问题，None本身就是一个Object。 None通常用于表示缺少值，因为默认参数未传递给函数。会导致调用时，无法判断参数是否存在的问题。  </li>
 <li>Q: 为什么打开TCP套接字有很大的开销？<br>S: 本身三次握手协议就带来了一定的开销，而socket是在应用层和传输层之间的一个抽象层，它把TCP/IP层复杂的操作抽象为几个简单的接口供应用层调用已实现进程在网络中通信。socket是”打开—读/写—关闭”模式的实现,其中开销比较大的是服务器socket接收到客户端socket请求，被动打开，开始接收客户端请求，直到客户端返回连接信息。这时候socket进入阻塞状态，所谓阻塞即accept()方法一直到客户端返回连接信息后才返回，开始接收下一个客户端请求。  </li>
@@ -601,7 +714,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通用问题"><span class="nav-number">1.0.1.</span> <span class="nav-text">通用问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计模式相关问题"><span class="nav-number">1.0.2.</span> <span class="nav-text">设计模式相关问题</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统"><span class="nav-number">1.0.1.</span> <span class="nav-text">操作系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux"><span class="nav-number">1.0.2.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络"><span class="nav-number">1.0.3.</span> <span class="nav-text">网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库"><span class="nav-number">1.0.4.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL"><span class="nav-number">1.0.5.</span> <span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis"><span class="nav-number">1.0.6.</span> <span class="nav-text">Redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通用问题"><span class="nav-number">1.0.7.</span> <span class="nav-text">通用问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计模式相关问题"><span class="nav-number">1.0.8.</span> <span class="nav-text">设计模式相关问题</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
